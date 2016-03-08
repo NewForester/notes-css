@@ -1,0 +1,12 @@
+/* notes-css by NewForester is licensed under a Creative Commons Attribution-ShareAlike 4.0 International Licence. */
+
+p > code        { background-color: GhostWhite; }
+p > code::before, p > code::after       { content: "`"; }
+
+li > code       { background-color: GhostWhite; }
+li > code::before, li > code::after     { content: "`"; }
+
+div.noindent    {}
+div.indent      {margin-left: 40px}
+
+/* EOF */
