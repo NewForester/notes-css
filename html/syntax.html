@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-syntax">CSS Syntax</h2>
+<p>The syntax for a CSS rule set consists of a selector and a declaration block.</p>
+<pre class="sourceCode css"><code class="sourceCode css">    selector <span class="kw">{property:</span>value<span class="kw">;</span> <span class="er">...</span><span class="kw">}</span></code></pre>
+<p>Lower case is preferred.</p>
+<p>The declaration block is a non-empty list of property-value pairs each terminated with a semi-colon. Often there is a space between the colon and the value but this is optional.</p>
+<p>Quote values only when they contain spaces. There is no space between a value and its units: <code>20px</code> not <code>20 px</code>.</p>
+<p>The selectors take several forms:</p>
+<ul>
+<li>an HTML element - is the element name</li>
+<li>an id - has the form <code>#xyz</code> where some (one) element has the attribute <code>id=xyz</code></li>
+<li>a class selector - has the form <code>.class</code></li>
+<li>a class and element selector - has the form <code>element.class</code></li>
+<li>a sub element selector - has the form <code>element sub-element ...</code></li>
+<li>a grouping selector - has the form <code>selector1, selector2, ...</code></li>
+</ul>
+<p>Examples:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    p           <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>
+    <span class="fl">#p1</span>         <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>
+    <span class="fl">.center</span>     <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>
+    p<span class="fl">.center</span>    <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>
+    h1, h2, p   <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span></code></pre>
+<p>An element may have more than one class, in which case, both apply.</p>
+<p>Styling rules are applied in the order in which they are encountered reading the page and any included style sheets from top to bottom.</p>
+<p>Later rules override earlier rules and rules that do not conflict accumulate.</p>
+<p>CSS accepts C-style comments (<code>/* ... */</code>), which may spread over several lines but do not nest.</p>
+</body>
+</html>
+
+
