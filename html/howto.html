@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-how-to">CSS How To</h2>
+<p>There are three ways style information can be added to HTML:</p>
+<ul>
+<li>external style sheet</li>
+<li>internal style sheet</li>
+<li>in-line styles</li>
+</ul>
+<p>An external style sheet is the most common as it allows all pages of the same web site to have the same styles. They are included using a <code>&lt;link&gt;</code> element within the <code>&lt;head&gt;</code> element. They must be files with the extension '.css'.</p>
+<pre class="sourceCode html"><code class="sourceCode html">    <span class="kw">&lt;head&gt;</span>
+      <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;styles.css&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;/head&gt;</span></code></pre>
+<p>The internal style sheet is the <code>&lt;style&gt;</code> element within the <code>&lt;head&gt;</code> element. Such style definitions are local to the one HTML document.</p>
+<pre class="sourceCode html"><code class="sourceCode html">    <span class="kw">&lt;head&gt;</span>
+      <span class="kw">&lt;style&gt;</span>
+        &lt;!-- whatever might go in an external style sheet --&gt;
+      <span class="kw">&lt;/style&gt;</span>
+    <span class="kw">&lt;/head&gt;</span></code></pre>
+<p>In-line styles are added to individual HTML elements using the <code>style=</code> attribute. Such style definitions apply the element and its nested elements.</p>
+<pre class="sourceCode html"><code class="sourceCode html">    <span class="kw">&lt;p</span><span class="ot"> style=</span><span class="st">&quot;a list of property:value; pairs&quot;</span><span class="kw">&gt;</span>A paragraph with in-line style<span class="kw">&lt;/p&gt;</span></code></pre>
+<p>The term cascading refers to rules that:</p>
+<ul>
+<li>in-line styles take precedence of style sheets and</li>
+<li>style sheets take precedence over the browser's default styles.</li>
+</ul>
+<p>It is normal to want an internal style sheet to take precedence over an external style sheet: in the <code>&lt;head&gt;</code> element, place the internal style sheet definition after the link to the external style sheet.</p>
+<p>When more than one external style sheet is included in a document, each takes precedence over those already read. So the first and last in the <code>&lt;head&gt;</code> element have lowest and highest precedence, respectively.</p>
+</body>
+</html>
+
+
