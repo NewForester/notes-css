@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-backgrounds">CSS Backgrounds</h2>
+<p>The CSS background properties are used to define the background colour or image for HTML elements.</p>
+<p>Use the <code>&lt;body&gt;</code> element to set the background for the entire page.</p>
+<p>The background colour and image may be set as follows:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    body {
+      background-color: colour-value;
+    }</code></pre>
+<p>and</p>
+<pre class="sourceCode html"><code class="sourceCode html">    body {
+      background-color: url(&quot;image&quot;);
+    }</code></pre>
+<p>but there seems little point in using both on the same element.</p>
+<p>The 'colour-value' is a name, RGB or HEX colour value; the 'image' is a valid URL. Note the required <code>url(...)</code> syntax.</p>
+<p>When using a background image, several other attributes may be useful.</p>
+<hr />
+
+<p>The image will be repeated (aka tiled), not scaled, to cover the entire element. Use the <code>background-repeat=</code> attribute to alter the tiling:</p>
+<ul>
+<li>repeat-x - only repeat horizontally</li>
+<li>repeat-y - only repeat vertically</li>
+<li>no-repeat - only show the background image once</li>
+</ul>
+<hr />
+
+<p>The <code>background-attachment=</code> property can (and is typically) used to stop the background scrolling with the rest of the element/page.</p>
+<p>With <code>no-repeat</code> the image will appear in the top left corner by default. This can be altered using the <code>background-position=</code> attribute:</p>
+<ul>
+<li>right top - same as top right</li>
+<li>left - same as center left</li>
+<li>bottom - same as bottom center</li>
+</ul>
+<p>but there are other ways to specify the position.</p>
+<p>I think <code>background-position=</code> should work with other values for <code>background-repeat=</code> but many combinations may appear to have no effect.</p>
+<hr /><!-- Shorthand -->
+
+<p>The shorthand <code>background</code> property may be used to set several properties in one statement:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    body {
+      background: #ffffff url(&quot;img_tree.png&quot;) no-repeat fixed right top;
+    }</code></pre>
+<p>is equivalent to:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    body {
+      background-color: #ffffff;
+      background-image: url(&quot;img_tree.png&quot;);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: right top;
+    }</code></pre>
+<p>'No change' values may be ommitted as along as the value that are given are in the order shown.</p>
+</body>
+</html>
+
+
