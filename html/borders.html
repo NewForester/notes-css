@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-borders">CSS Borders</h2>
+<p>A HTML element has four borders whose properties can be set as one or individually. The most common properties are:</p>
+<ul>
+<li>style - one of [dotted, dashed, solid, double, groove, ridge, insert, outset, none, hidden]</li>
+<li>width - one of [thin, medium, thick] or a specific width in [px, pt, cm, em, ...]</li>
+<li>color - a colour name, RGB value or HEX value</li>
+</ul>
+<p>These can be set as one or individually. Since the default style is none, the width and colour properties have no effect unless style is set.</p>
+<hr /><!-- Shorthand -->
+
+<p>The shorthand <code>border</code> property may be used to set several properties in one statement:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    p <span class="kw">{</span>
+      <span class="kw">border:</span> <span class="dt">5px</span> <span class="dt">solid</span> <span class="dt">red</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>is equivalent to:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    p <span class="kw">{</span>
+      <span class="kw">border-width:</span> <span class="dt">5px</span><span class="kw">;</span>
+      <span class="kw">border-style:</span> <span class="dt">solid</span><span class="kw">;</span>
+      <span class="kw">border-color:</span> <span class="dt">red</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>'No change' values may be ommitted as along as the value that are given are in the order shown.</p>
+<p>The <code>border-width</code>, <code>border-style</code> and <code>border-color</code> properties are themselve shorthand properties that set a property for all four margines in one statement:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    p <span class="kw">{</span>
+      <span class="kw">border-color:</span> <span class="dt">red</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>and is equivalent to:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    p <span class="kw">{</span>
+      <span class="kw">border-top-color:</span> <span class="dt">red</span><span class="kw">;</span>
+      <span class="kw">border-right-color:</span> <span class="dt">red</span><span class="kw">;</span>
+      <span class="kw">border-bottom-color:</span> <span class="dt">red</span><span class="kw">;</span>
+      <span class="kw">border-left-color:</span> <span class="dt">red</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>Note that:</p>
+<ul>
+<li>one value applies to all four borders;</li>
+<li>a second value applies to the right and left borders;</li>
+<li>a third value applies to the bottom border;</li>
+<li>four values are applied to the top, right, bottom and left borders;</li>
+</ul>
+<hr />
+
+<p>The <code>border-radius</code> property may be used a round the corners where borders meet:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    p <span class="kw">{</span>
+      <span class="kw">border-radius:</span> <span class="dt">5px</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>The larger the radius, the more pronounced the rounding.</p>
+</body>
+</html>
+
+
