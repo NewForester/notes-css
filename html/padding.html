@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-padding">CSS Padding</h2>
+<p>A HTML element has padding inside its four borders. Padding properties can be set for all four sides or individually but there is only one.</p>
+<ul>
+<li>width - one of [inherit], a specific width in [px, pt, cm, em, ...] or a % of the width of the (inside) element</li>
+</ul>
+<p>Setting the <code>padding</code> property to <code>inherit</code> will inherit the property from the containing element.</p>
+<hr /><!-- Shorthand -->
+
+<p>The shorthand <code>padding</code> property sets the width/height of the padding on all four sides at once:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    p <span class="kw">{</span>
+      <span class="kw">padding:</span> <span class="dt">5px</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>is equivalent to:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    p <span class="kw">{</span>
+      <span class="kw">padding-top:</span> <span class="dt">5px</span><span class="kw">;</span>
+      <span class="kw">padding-right:</span> <span class="dt">5px</span><span class="kw">;</span>
+      <span class="kw">padding-bottom:</span> <span class="dt">5px</span><span class="kw">;</span>
+      <span class="kw">padding-left:</span> <span class="dt">5px</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>Note that:</p>
+<ul>
+<li>one value applies to all four sides;</li>
+<li>a second value applies to the right and left sides;</li>
+<li>a third value applies to the bottom;</li>
+<li>four values are applied to the top, right, bottom and left sides;</li>
+</ul>
+</body>
+</html>
+
+
