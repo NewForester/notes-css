@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-margins">CSS Margins</h2>
+<p>A HTML element has four margins outside its four borders. Their properties can be set as one or individually but there is only one.</p>
+<ul>
+<li>width - one of [auto, inherit], a specific width in [px, pt, cm, em, ...] or a % of the width of the containing (outside) element</li>
+</ul>
+<p>Setting the <code>margin</code> property to <code>auto</code> will centre the element horizontally within its containing element.</p>
+<p>Setting the <code>margin</code> property to <code>inherit</code> will inherit the property from the containing element.</p>
+<p>The bottom margin of one element and the top margin of element below are (sometimes) collapsed: the margin between the two elements is set to the larger of the two.</p>
+<hr /><!-- Shorthand -->
+
+<p>The shorthand <code>margins</code> property may be used to set all the margin properties in one statement:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    p <span class="kw">{</span>
+      <span class="kw">margin:</span> <span class="dt">5px</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>s equivalent to:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    p <span class="kw">{</span>
+      <span class="kw">margin-top:</span> <span class="dt">5px</span><span class="kw">;</span>
+      <span class="kw">margin-right:</span> <span class="dt">5px</span><span class="kw">;</span>
+      <span class="kw">margin-bottom:</span> <span class="dt">5px</span><span class="kw">;</span>
+      <span class="kw">margin-left:</span> <span class="dt">5px</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>Note that:</p>
+<ul>
+<li>one value applies to all four margins;</li>
+<li>a second value applies to the right and left margins;</li>
+<li>a third value applies to the bottom margin;</li>
+<li>four values are applied to the top, right, bottom and left margins;</li>
+</ul>
+</body>
+</html>
+
+
