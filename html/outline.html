@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-outline">CSS Outline</h2>
+<p>A HTML element may have an outline. The outline may be thought of as a border outside of the element margin while the border proper is inside the margin.</p>
+<p>The properties of the outline can only be set for all four sides but the most common of the properties are the same as for the border property:</p>
+<ul>
+<li>style - one of [dotted, dashed, solid, double, groove, ridge, insert, outset, none, hidden]</li>
+<li>width - one of [thin, medium, thick] or a specific width in [px, pt, cm, em, ...]</li>
+<li>color - a colour name, RGB value or HEX value or invert.</li>
+</ul>
+<p>Since the default style is none, the width and colour properties have no effect unless style is set.</p>
+<p>The width is not part of any element's total width: the outline is superimposed.</p>
+<p>Use <code>color=invert</code> sets the colour to the inverse of whatever the outline lies upon. Use this to ensure the outline is always visible.</p>
+<hr /><!-- Shorthand -->
+
+<p>The shorthand <code>outline</code> property may be used to set several properties in one statement:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    p <span class="kw">{</span>
+      <span class="kw">outline:</span> <span class="dt">5px</span> <span class="dt">solid</span> <span class="dt">red</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>is equivalent to:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    p <span class="kw">{</span>
+      <span class="kw">outline-width:</span> <span class="dt">5px</span><span class="kw">;</span>
+      <span class="kw">outline-style:</span> <span class="dt">solid</span><span class="kw">;</span>
+      <span class="kw">outline-color:</span> <span class="dt">red</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>'No change' values may be ommitted as along as the values that are given are in the order shown.</p>
+<hr />
+
+<p>The <code>outline-offset</code> specifies the space between the outline and the outer edge of the element.</p>
+<pre class="sourceCode css"><code class="sourceCode css">    p <span class="kw">{</span>
+      <span class="kw">outline-offset:</span> <span class="dt">5px</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+</body>
+</html>
+
+
