@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-font-properties">CSS Font Properties</h2>
+<p>A HTML element has several font properties that affect any text content:</p>
+<ul>
+<li>font-family: - font families are serif, sans-serif and monospace;</li>
+<li>font-size: - either absolute (px) or relative (em);</li>
+<li>font-style: - one of [normal, italic, oblique];</li>
+<li>font-variant: - one of [normal, small-caps];</li>
+<li>font-weight: - one of [normal, bold];</li>
+</ul>
+<p>It may be hard to distinguish oblique text from italic text.</p>
+<hr /><!-- Font Family -->
+
+<p>The font family is a comma separated list of font names (from the same font family) terminated by the family name. The list is a fall-back system: the first font in the list is preferred but if it is not available, the next is considered and so on:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    p { font-family: &quot;Times New Roman&quot;, Times, serif; }</code></pre>
+<p>There is a default font for each family but it is system dependent. There are recommended combinations but they do not look cross-platform.</p>
+<p>There are (Google) fonts on-line that are downloaded on the fly.</p>
+<hr /><!-- Font Size -->
+
+<p>The font size is absolute if specified in pixels. This is viewed as bad for accessibility as the user cannot change the text size.</p>
+<p>The font size is relative if specified in ems. This is relative to surrounding elements. The user can change the text size should they find it too small to read comfortably.</p>
+<p>A text size of 1em is equal to the current font size. For the sake of some older IE browser, set:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    body { font-size: 100%; }</code></pre>
+<p>The font size may be doubled up with the line height property as shown below.</p>
+<hr /><!-- Shorthand -->
+
+<p>The shorthand <code>font</code> property may be used to set several properties in one statement:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    p { font:italic normal bold 12px/30px Georgia, serif; }</code></pre>
+<p>is equivalent to:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    p {
+      font-style:     italic;
+      font-variant:   normal;
+      font-weight:    bold;
+      font-size:      12px/30px;
+      font-family:    Georgia, serif;
+    }</code></pre>
+<p>'No change' values may be ommitted as along as the values that are given are in the order shown.</p>
+</body>
+</html>
+
+
