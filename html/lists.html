@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-lists">CSS Lists</h2>
+<p>CSS properties are most often used on lists to:</p>
+<ul>
+<li>select different list item markers;</li>
+<li>use an image as a list item marker;</li>
+<li>add background colours to list and list items;</li>
+</ul>
+<p>The <code>list-style-type</code> property specifies the item marker to be used:</p>
+<ul>
+<li>circle</li>
+<li>square</li>
+<li>upper-roman</li>
+<li>lower-alpha</li>
+</ul>
+<p>Some are intended for unordered lists and other for ordered lists but may do what you want. For more details see <a href="https://www.w3schools.com/cssref/pr_list-style-type.asp">CSS list-style-type Property</a>.</p>
+<p>To remove the item markers altogether set the style to none:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    ul { list-style-type: none; }</code></pre>
+<p>The <code>list-style-image</code> specifies an image to be used as the item marker:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    ul { list-style-image: url(&#39;sqpurple.gif&#39;); }</code></pre>
+<p>By default, the item marker is placed outside the content flow. To use the alternative:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    ol { list-style-position: inside; }</code></pre>
+<p>There is a short-hand property:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    ul { list-style: square inside url(&quot;sqpurple.gif&quot;); };</code></pre>
+<p>that is equivalent to:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    ul {
+         list-style-type: square;
+         list-style-position: inside;
+         list-style-image: url(&quot;sqpurple.gif&quot;);
+    }</code></pre>
+<p>Default values may be omitted provided those that are specified are in the order shown.</p>
+<p>Background colour may be used to illustrate how CSS styles are applied to sub-elements:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    ol {
+        background: #ff9999;
+        padding: 20px;
+    }
+
+    ol li {
+        background: #ffe5e5;
+        padding: 5px;
+        margin-left: 35px;
+   }</code></pre>
+</body>
+</html>
+
+
