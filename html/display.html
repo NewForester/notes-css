@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-display">CSS Display</h2>
+<p>The display property is an an important property for controlling output.</p>
+<p>HTML elements are either block or span and their default display property values are <code>block</code> and <code>inline</code> respectively. The latter can be overridden.</p>
+<p>An example of overriding the display property for a block element would be:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    li {
+      display: inline;
+    }</code></pre>
+<p>This would list items across, rather than down, the page. It is often used to create menu bars.</p>
+<p>An example of overriding property for a span element would be:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    a {
+      display: block;
+    }</code></pre>
+<p>This would display links down, rather than across, the page. This has the effect of creating a list of links to chose from.</p>
+<hr /><!-- Hiding elements -->
+
+<p>An element can be 'removed' from the display by setting its <code>display</code> property to <code>none</code>. This is used in scripts to hide and reveal elements rather than delete and re-create them.</p>
+<pre class="sourceCode html"><code class="sourceCode html">    #peek-a-boo {
+      display: none;
+    }</code></pre>
+<p>An alternative is the <code>visibility</code> property. When set to <code>hidden</code>, an element is not displayed but the space it occupies remains reserved.</p>
+<pre class="sourceCode html"><code class="sourceCode html">    #big-empty-space {
+      visibility: hidden;
+    }</code></pre>
+</body>
+</html>
+
+
