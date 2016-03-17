@@ -23,10 +23,21 @@ They do not include padding, border or margins but refer to the area inside thes
 
 The dimensions may be specified in [px, cm, ...] or as a % of the enclosing element's dimensions.
 
-When absolute dimensions are used, the browser will create scroll bars when the display area is not big enough.
+When absolute dimensions are used, the browser will (aka should) create scroll bars when the display area is not big enough.
 This is particularly noticeable on small screens.
 
 Maximum dimensions override absolute dimensions and lead to fewer scroll bars issues.
+
+An example.
+
+It is common to give a block element a width that is less than the page width and set the margin to auto.
+This has the effect of centring the element on the page.
+Text is wrapped within the given width.
+When the page width is less than the element width, a horizontal scroll bar appears so you can scroll right to see the end of the text.
+
+If the element is given a maximum width instead of a width, then
+the element width is whichever is the smaller of this maximum width and the page width.
+Text wrapped within this derived element width and no scroll bars needed.
 
 </body>
 </html>
