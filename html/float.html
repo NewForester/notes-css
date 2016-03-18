@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-float-and-clear">CSS Float and Clear</h2>
+<p>The <code>float</code> and <code>clear</code> properties determine whether and how elements float.</p>
+<p>It is still common to do entire web layouts using these properties.</p>
+<p>The simple use the float property is to wrap text around images:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    img <span class="kw">{</span>
+      <span class="kw">float:</span> <span class="dt">right</span><span class="kw">;</span>
+      <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">0</span> <span class="dt">10px</span> <span class="dt">10px</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>might be used to float an image to the right of text.</p>
+<p>Used just like this, elements declared before and after the floating element may wrap around it.</p>
+<p>The clear property may be used to stop this:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    div <span class="kw">{</span>
+      <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>would prevent any element floating to the left of a <code>&lt;div&gt;</code> element.</p>
+<p>Think of it as a line break before or after a floating element.</p>
+<hr /><!-- The clearfix Hack -->
+
+<p>If an element is floated and it is taller than the element containing it, then it will overflow the container.</p>
+<p>This can be stopped with:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.clearfix</span> <span class="kw">{</span>
+      <span class="kw">overflow:</span> <span class="dt">auto</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>This fix works well provided margins and padding are under control but can lead to the appearance of scroll bars.</p>
+<p>The new, modern, clearfix hack is safer:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.clearfix</span><span class="dv">::after</span> <span class="kw">{</span>
+      <span class="kw">content:</span> <span class="st">&quot;&quot;</span><span class="kw">;</span>
+      <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
+      <span class="kw">display:</span> <span class="dt">table</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<hr /><!-- Inline block -->
+
+<p>The <code>float</code> property can be used to create a grid of boxes that fills the browser width and wraps nicely when the browser is resized. All you need it the <code>clear</code> property on whatever comes after the last of the boxes.</p>
+<p>An even more convenient way of doing this is with the <code>display: inline-block</code> property. An <code>inline-block</code> is an in-line element that can have a width and a height.</p>
+<p>Instead of:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.floating-box</span> <span class="kw">{</span>
+      <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+      <span class="er">...</span>
+    <span class="kw">}</span>
+
+    <span class="fl">.after-box</span> <span class="kw">{</span>
+      <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>you need just:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.floating-box</span> <span class="kw">{</span>
+      <span class="kw">display:</span> <span class="dt">inline-block</span><span class="kw">;</span>
+      <span class="er">...</span>
+    <span class="kw">}</span></code></pre>
+</body>
+</html>
+
+
