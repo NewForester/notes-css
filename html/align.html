@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-layout---horizontal-and-vertical-alignment">CSS Layout - Horizontal and Vertical Alignment</h2>
+<p>There seems to be no CSS element whose purpose is to align the contents of an element horizontally or vertically within an element.</p>
+<p>Instead, there are a number of increasingly sophisticated hacks and workarounds.</p>
+<hr /><!-- Horizontal Alignment -->
+
+<p>The horizontal alignment of text within an block element is straight forward. Use the <code>text-align</code> property with one of the values <code>left</code>, <code>center</code> or <code>right</code>.</p>
+<p>To centre a block element within its container use <code>margin: auto</code>. This has no effect unless the width property is set.</p>
+<p>To centre an image use <code>margin: auto</code> and also <code>display: block</code> because otherwise the image is displayed as an in-line element.</p>
+<p>To align to the right or the left, you can use <code>position: absolute</code> with the right or left property. However, this can lead of elements overlapping.</p>
+<p>The alternative is to use the <code>float</code> property with the value <code>right</code> or <code>left</code>.</p>
+<p>In either case, for the sake of your own sanity, declare the <code>margin</code> and <code>padding</code> properties for the <code>&lt;body&gt;</code> element. A value of 0 will do.</p>
+<hr /><!-- Vertical Alignment -->
+
+<p>The most common case of vertical alignment seems to be centring text vertically with a larger container.</p>
+<p>The cheep and cheerful approach is the padding property. Calibrating this may be tricky if the text wraps onto more than one line.</p>
+<p>An alternative that works for text that wraps onto more than one line is to use a <code>line-height</code> property with the same value as the <code>height</code> property:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.center</span> <span class="kw">{</span>
+      <span class="kw">line-height:</span> <span class="dt">200px</span><span class="kw">;</span>
+      <span class="kw">height:</span> <span class="dt">200px</span><span class="kw">;</span>
+      <span class="kw">border:</span> <span class="dt">3px</span> <span class="dt">solid</span> <span class="dt">green</span><span class="kw">;</span>
+      <span class="kw">text-align:</span> <span class="dt">center</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* If the text has multiple lines, add the following: */</span>
+    <span class="fl">.center</span> p <span class="kw">{</span>
+      <span class="kw">line-height:</span> <span class="dt">1.5</span><span class="kw">;</span>
+      <span class="kw">display:</span> <span class="dt">inline-block</span><span class="kw">;</span>
+      <span class="kw">vertical-align:</span> <span class="dt">middle</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>This only works if the text is in one paragraph.</p>
+<p>For text in more than one paragraph, use:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.center</span> <span class="kw">{</span>
+      <span class="kw">height:</span> <span class="dt">200px</span><span class="kw">;</span>
+      <span class="kw">position:</span> <span class="dt">relative</span><span class="kw">;</span>
+      <span class="kw">border:</span> <span class="dt">3px</span> <span class="dt">solid</span> <span class="dt">green</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="fl">.center</span> p <span class="kw">{</span>
+      <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span>
+      <span class="kw">position:</span> <span class="dt">absolute</span><span class="kw">;</span>
+      <span class="kw">top:</span> <span class="dt">50%</span><span class="kw">;</span>
+      <span class="kw">left:</span> <span class="dt">50%</span><span class="kw">;</span>
+      <span class="kw">transform:</span> translate(<span class="dt">-50%</span>, <span class="dt">-50%</span>)<span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+</body>
+</html>
+
+
