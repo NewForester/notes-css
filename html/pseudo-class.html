@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-pseudo-classes">CSS Pseudo Classes</h2>
+<p>Pseudo classes are defined in term of elements and their state.</p>
+<p>The syntax for pseudo classes is:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    selector<span class="dv">:pseudo-class</span> <span class="kw">{</span> <span class="kw">property:</span>value<span class="kw">;</span> <span class="er">...</span> <span class="kw">}</span></code></pre>
+<p>Note that any selector can be combined with a pseudo class:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    a<span class="fl">.highlight</span><span class="dv">:hover</span> <span class="kw">{</span> <span class="kw">color:</span> <span class="dt">#ff0000</span><span class="kw">;</span> <span class="kw">}</span></code></pre>
+<p>A good many pseudo classes are specific to a particular element. Many are specific to input elements.</p>
+<p>One pseudo-class that may be combined with any element is <code>:hover</code>, which is active which the mouse hovers over the element.</p>
+<hr /><!-- Anchor pseudo classes -->
+
+<p>There are four pseudo classes for hyper-link <code>&lt;a&gt;</code> element:</p>
+<ul>
+<li>a:link - a normal, unvisited link</li>
+<li>a:visited - a link the user has visited</li>
+<li>a:hover - a link when the user mouses over it</li>
+<li>a:active - a link the moment it is clicked</li>
+</ul>
+<p>The properties for the individual states must declared in the order above. These may be discussed in more details on the <a href="links.html">CSS Links</a> page.</p>
+<hr /><!-- First Child pseudo class -->
+
+<p>The <code>:first-child</code> pseudo-class matches the first child of the containing element:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    p<span class="dv">:first-child</span>       <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>         <span class="co">/* any &lt;p&gt; that is the first child of any other element */</span>
+    p i<span class="dv">:first-child</span>     <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>         <span class="co">/* first &lt;i&gt; element of all &lt;p&gt; elements */</span>
+    p<span class="dv">:first-child</span> i     <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>         <span class="co">/* all &lt;i&gt; elements of any &lt;p&gt; element that is a first child */</span></code></pre>
+<hr /><!-- Lang pseudo class -->
+
+<p>The <code>:lang</code> pseudo classes allow different rules for different languages. An example is changing the quotation marks for <code>&lt;q&gt;</code> elements.</p>
+<pre class="sourceCode html"><code class="sourceCode html">    <span class="kw">&lt;style&gt;</span>
+      q<span class="dv">:lang(fr)</span> <span class="kw">{</span>
+        <span class="kw">quotes:</span> <span class="st">&quot;</span>«<span class="st">&quot;</span> <span class="st">&quot;</span>»<span class="st">&quot;</span><span class="kw">;</span>
+      <span class="kw">}</span>
+    <span class="kw">&lt;/style&gt;</span>
+
+    <span class="kw">&lt;body&gt;</span>
+      <span class="kw">&lt;p&gt;</span>Some text <span class="kw">&lt;q</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span>Salut!<span class="kw">&lt;/q&gt;</span> Some text.<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;/body&gt;</span></code></pre>
+</body>
+</html>
+
+
