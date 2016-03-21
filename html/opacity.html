@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-opacity">CSS Opacity</h2>
+<p>The <code>opacity</code> property specifies the opacity/transparency of an element (not just its background).</p>
+<p>The property takes a value in the range 0.0 to 1.0. The lower the value, the more transparent the element.</p>
+<pre class="sourceCode css"><code class="sourceCode css">    img <span class="kw">{</span>
+       <span class="kw">opacity:</span> <span class="dt">0.5</span><span class="kw">;</span>
+       <span class="kw">filter:</span> alpha(opacity=<span class="dt">50</span>)<span class="kw">;</span>       <span class="co">/* For IE8 and earlier */</span>
+    <span class="kw">}</span></code></pre>
+<p>The property is often used with the <code>:hover</code> pseudo class to highlight the element:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    img         <span class="kw">{</span> <span class="kw">opacity:</span> <span class="dt">0.5</span><span class="kw">;</span> <span class="kw">}</span>
+    img<span class="dv">:hover</span>   <span class="kw">{</span> <span class="kw">opacity:</span> <span class="dt">1.0</span><span class="kw">;</span> <span class="kw">}</span></code></pre>
+<p>When the <code>opacity</code> property is used it is not just the background that becomes somewhat transparent bit all its child elements too. This can make reading text difficult.</p>
+<p>The workaround for this when the background is just a colour is to use the RGBA colour and specify the opacity with the colour:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    div <span class="kw">{</span>
+      <span class="kw">background:</span> <span class="dt">rgba(76</span>, <span class="dt">175</span>, <span class="dt">80</span>, <span class="dt">0.3)</span>        <span class="co">/* Green background with 30% opacity */</span>
+    <span class="kw">}</span></code></pre>
+<p>The partial workaround for this when the background is an image is to use bold text:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    div<span class="fl">.background</span> <span class="kw">{</span>
+      <span class="kw">background:</span> <span class="dt">url(</span>klematis<span class="dt">.</span>jpg<span class="dt">)</span> <span class="dt">repeat</span><span class="kw">;</span>
+      <span class="kw">border:</span> <span class="dt">2px</span> <span class="dt">solid</span> <span class="dt">black</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    div<span class="fl">.transbox</span> <span class="kw">{</span>
+      <span class="kw">margin:</span> <span class="dt">30px</span><span class="kw">;</span>
+      <span class="kw">background-color:</span> <span class="dt">#ffffff</span><span class="kw">;</span>
+      <span class="kw">border:</span> <span class="dt">1px</span> <span class="dt">solid</span> <span class="dt">black</span><span class="kw">;</span>
+      <span class="kw">opacity:</span> <span class="dt">0.6</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    div<span class="fl">.transbox</span> p <span class="kw">{</span>
+      <span class="kw">margin:</span> <span class="dt">5%</span><span class="kw">;</span>
+      <span class="kw">font-weight:</span> <span class="dt">bold</span><span class="kw">;</span>
+      <span class="kw">color:</span> <span class="dt">#000000</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+</body>
+</html>
+
+
