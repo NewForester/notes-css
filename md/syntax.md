@@ -70,5 +70,27 @@ These mean:
     div + p     { ... }         /* a <p> element that follows a <div> element */
 ```
 
+<!-- Pseudo Classes and Pseudo Elements -->
+
+The syntax for pseudo classes and elements is:
+
+```css
+    selector:pseudo-class { property:value; ... }
+
+    selector::pseudo-element { property:value; ... }
+```
+
+Example are:
+
+```css
+    a.highlight:hover { color: #ff0000; }
+
+    p.intro::first-letter { color: #ff0000; font-size:200%; }
+```
+
+Note: the double colon syntax for pseudo elements is new with CSS3.
+Before that a single colon was used.
+The single colon is accepted for backwards compatibility but should not be used in new code.
+
 </body>
 </html>

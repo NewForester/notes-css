@@ -45,6 +45,17 @@
     div &gt; p     <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>         <span class="co">/* a &lt;p&gt; element that is a child but not a grandchild */</span>
     div ~ p     <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>         <span class="co">/* a &lt;p&gt; element that is sibling of a &lt;div&gt; element */</span>
     div + p     <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>         <span class="co">/* a &lt;p&gt; element that follows a &lt;div&gt; element */</span></code></pre>
+<!-- Pseudo Classes and Pseudo Elements -->
+
+<p>The syntax for pseudo classes and elements is:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    selector<span class="dv">:pseudo-class</span> <span class="kw">{</span> <span class="kw">property:</span>value<span class="kw">;</span> <span class="er">...</span> <span class="kw">}</span>
+
+    selector<span class="dv">::pseudo-element</span> <span class="kw">{</span> <span class="kw">property:</span>value<span class="kw">;</span> <span class="er">...</span> <span class="kw">}</span></code></pre>
+<p>Example are:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    a<span class="fl">.highlight</span><span class="dv">:hover</span> <span class="kw">{</span> <span class="kw">color:</span> <span class="dt">#ff0000</span><span class="kw">;</span> <span class="kw">}</span>
+
+    p<span class="fl">.intro</span><span class="dv">::first-letter</span> <span class="kw">{</span> <span class="kw">color:</span> <span class="dt">#ff0000</span><span class="kw">;</span> <span class="kw">font-size:</span><span class="dt">200%</span><span class="kw">;</span> <span class="kw">}</span></code></pre>
+<p>Note: the double colon syntax for pseudo elements is new with CSS3. Before that a single colon was used. The single colon is accepted for backwards compatibility but should not be used in new code.</p>
 </body>
 </html>
 
