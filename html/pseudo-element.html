@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-pseudo-elements">CSS Pseudo Elements</h2>
+<p>CSS pseudo elements may be used to style specific parts of an element's content.</p>
+<p>The syntax for pseudo element is:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    selector<span class="dv">::pseudo-element</span> <span class="kw">{</span> <span class="kw">property:</span>value<span class="kw">;</span> <span class="er">...</span> <span class="kw">}</span></code></pre>
+<p>Note that any selector can be combined with a pseudo element.</p>
+<hr /><!-- First Line and First Letter Pseudo Elements -->
+
+<p>The <code>::first-line</code> and <code>::first-letter</code> pseudo elements may be used to add a special style to the first line or just the first letter of the displayed text content of an element.</p>
+<p>There are about a dozen properties can be used with these pseudo elements and they can be combined:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    p<span class="dv">::first-letter</span> <span class="kw">{</span>
+      <span class="kw">color:</span> <span class="dt">#ff0000</span><span class="kw">;</span>
+      <span class="kw">font-size:</span> <span class="dt">xx-large</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    p<span class="dv">::first-line</span> <span class="kw">{</span>
+      <span class="kw">color:</span> <span class="dt">#0000ff</span><span class="kw">;</span>
+      <span class="kw">font-variant:</span> <span class="dt">small-caps</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<hr /><!-- Before and After Pseudo Elements -->
+
+<p>The <code>::before</code> and <code>::after</code> pseudo elements may be used to insert content before or after the content of an element.</p>
+<pre class="sourceCode css"><code class="sourceCode css">    h1<span class="dv">::before</span>, h1<span class="dv">::after</span> <span class="kw">{</span>
+      <span class="kw">content:</span> <span class="dt">url(</span>smiley<span class="dt">.</span>gif<span class="dt">)</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<hr /><!-- The Selection Pseudo Element -->
+
+<p>The <code>::selection</code> pseudo element matches the portion of an element that is selected by the user. It is intended for highlighting.</p>
+<p>The properties that can be used with this pseudo element are <code>color</code>, <code>background</code>, <code>cursor</code> and <code>outline</code>.</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="dv">::selection</span> <span class="kw">{</span>
+      <span class="kw">color:</span> <span class="dt">red</span><span class="kw">;</span>
+      <span class="kw">background:</span> <span class="dt">yellow</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+</body>
+</html>
+
+
