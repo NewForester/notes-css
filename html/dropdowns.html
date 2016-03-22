@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="drop-down-examples">Drop-down Examples</h2>
+<p>Many web pages have a drop-down of some sort. Drop-down menus are the most common form.</p>
+<p>Drop-downs are implemented by changing the value of the <code>display</code> property of hidden content in response to the user moving the mouse pointer over the visible content.</p>
+<hr />
+
+<p>Here is the CSS for a basic 'tool-tip' style drop-down example:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="co">/* Class for the drop-down container */</span>
+    <span class="fl">.dropdown</span> <span class="kw">{</span>
+        <span class="kw">position:</span> <span class="dt">relative</span><span class="kw">;</span>             <span class="co">/* needed so the drop-down content does not push other elements aside */</span>
+        <span class="kw">display:</span> <span class="dt">inline-block</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Class for the drop-down content */</span>
+    <span class="fl">.dropdown-content</span> <span class="kw">{</span>
+        <span class="kw">display:</span> <span class="dt">none</span><span class="kw">;</span>                  <span class="co">/* hidden until mouse over */</span>
+        <span class="kw">position:</span> <span class="dt">absolute</span><span class="kw">;</span>             <span class="co">/* to the content appears just below the container */</span>
+        <span class="kw">background-color:</span> <span class="dt">#f9f9f9</span><span class="kw">;</span>
+        <span class="kw">min-width:</span> <span class="dt">160px</span><span class="kw">;</span>
+        <span class="kw">box-shadow:</span> <span class="dt">0px</span> <span class="dt">8px</span> <span class="dt">16px</span> <span class="dt">0px</span> <span class="dt">rgba(0</span>,<span class="dt">0</span>,<span class="dt">0</span>,<span class="dt">0.2)</span><span class="kw">;</span>
+        <span class="kw">padding:</span> <span class="dt">12px</span> <span class="dt">16px</span><span class="kw">;</span>
+        <span class="kw">z-index:</span> <span class="dt">1</span><span class="kw">;</span>                     <span class="co">/* so the contents appears on top of other elements */</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Make the content appear when the mouse is over the container */</span>
+    <span class="fl">.dropdown</span><span class="dv">:hover</span> <span class="fl">.dropdown-content</span> <span class="kw">{</span>
+        <span class="kw">display:</span> <span class="dt">block</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>and here is the HTML:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;dropdown&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;span&gt;</span>Mouse over me<span class="kw">&lt;/span&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;dropdown-content&quot;</span><span class="kw">&gt;</span>
+            <span class="kw">&lt;p&gt;</span>Hello World!<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;/div&gt;</span>
+    <span class="kw">&lt;/div&gt;</span></code></pre>
+<p>that will appear as:</p>
+<style>
+    .ex1 .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .ex1 .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: gray;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+    }
+
+    .ex1 .dropdown:hover .dropdown-content {
+        display: block;
+    }
+</style>
+
+<div class="indent ex1">
+    <div class="dropdown">
+        
+<span>Mouse over me</span>
+<div class="dropdown-content">
+            <p>
+Hello World!
+</p>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<p>Here is the CSS for a drop-down menu example:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="co">/* Style The Dropdown Button */</span>
+    <span class="fl">.dropbtn</span> <span class="kw">{</span>
+        <span class="kw">background-color:</span> <span class="dt">green</span><span class="kw">;</span>
+        <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span>
+        <span class="kw">padding:</span> <span class="dt">16px</span><span class="kw">;</span>
+        <span class="kw">font-size:</span> <span class="dt">16px</span><span class="kw">;</span>
+        <span class="kw">border:</span> <span class="dt">none</span><span class="kw">;</span>
+        <span class="kw">cursor:</span> <span class="dt">pointer</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* The container &lt;div&gt; - needed to position the dropdown content */</span>
+    <span class="fl">.dropdown</span> <span class="kw">{</span>
+        <span class="kw">position:</span> <span class="dt">relative</span><span class="kw">;</span>
+        <span class="kw">display:</span> <span class="dt">inline-block</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Dropdown Content (Hidden by Default) */</span>
+    <span class="fl">.dropdown-content</span> <span class="kw">{</span>
+        <span class="kw">display:</span> <span class="dt">none</span><span class="kw">;</span>
+        <span class="kw">position:</span> <span class="dt">absolute</span><span class="kw">;</span>
+        <span class="kw">background-color:</span> lightgray<span class="kw">;</span>
+        <span class="kw">min-width:</span> <span class="dt">160px</span><span class="kw">;</span>
+        <span class="kw">box-shadow:</span> <span class="dt">0px</span> <span class="dt">8px</span> <span class="dt">16px</span> <span class="dt">0px</span> <span class="dt">rgba(0</span>,<span class="dt">0</span>,<span class="dt">0</span>,<span class="dt">0.2)</span><span class="kw">;</span>
+        <span class="kw">z-index:</span> <span class="dt">1</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Links inside the dropdown */</span>
+    <span class="fl">.dropdown-content</span> a <span class="kw">{</span>
+        <span class="kw">color:</span> <span class="dt">black</span><span class="kw">;</span>
+        <span class="kw">padding:</span> <span class="dt">12px</span> <span class="dt">16px</span><span class="kw">;</span>
+        <span class="kw">text-decoration:</span> <span class="dt">none</span><span class="kw">;</span>
+        <span class="kw">display:</span> <span class="dt">block</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Change color of dropdown links on hover */</span>
+    <span class="fl">.dropdown-content</span> a<span class="dv">:hover</span> <span class="kw">{</span>
+        <span class="kw">background-color:</span> <span class="dt">gray</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Show the dropdown menu on hover */</span>
+    <span class="fl">.dropdown</span><span class="dv">:hover</span> <span class="fl">.dropdown-content</span> <span class="kw">{</span>
+        <span class="kw">display:</span> <span class="dt">block</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Change the background color of the drop-down button when the drop-down content is shown */</span>
+    <span class="fl">.dropdown</span><span class="dv">:hover</span> <span class="fl">.dropbtn</span> <span class="kw">{</span>
+        <span class="kw">background-color:</span> darkgreen<span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>and here is the HTML:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;dropdown&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;dropbtn&quot;</span><span class="kw">&gt;</span>Dropdown<span class="kw">&lt;/button&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;dropdown-content&quot;</span><span class="kw">&gt;</span>
+            <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Link 1<span class="kw">&lt;/a&gt;</span>
+            <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Link 2<span class="kw">&lt;/a&gt;</span>
+            <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Link 3<span class="kw">&lt;/a&gt;</span>
+        <span class="kw">&lt;/div&gt;</span>
+    <span class="kw">&lt;/div&gt;</span></code></pre>
+<p>that will appear as:</p>
+<style>
+    .ex2 .dropbtn {
+        background-color: green;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .ex2 .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .ex2 .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: lightgray;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .ex2 .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .ex2 .dropdown-content a:hover {
+        background-color: gray;
+    }
+
+    .ex2 .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .ex2 .dropdown:hover .dropbtn {
+        background-color: darkgreen;
+    }
+</style>
+
+<div class="indent ex2">
+    <div class="dropdown">
+        <button class="dropbtn">
+Dropdown</button>
+<div class="dropdown-content">
+            
+<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link 3</a>
+</div>
+    </div>
+</div>
+
+<hr />
+
+</body>
+</html>
+
+
