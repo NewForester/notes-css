@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="navigation-bar-examples">Navigation Bar Examples</h2>
+<p>Most web pages have some means of navigating to related web pages. Navigation bars are a very common solution.</p>
+<p>These are implemented around lists of hyper-link and do not involve and new elements, attributes or properties and values.</p>
+<p>Consider first the list:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    <span class="kw">&lt;ul&gt;</span>
+      <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;default.asp&quot;</span><span class="kw">&gt;</span>Home<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;news.asp&quot;</span><span class="kw">&gt;</span>News<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;contact.asp&quot;</span><span class="kw">&gt;</span>Contact<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;about.asp&quot;</span><span class="kw">&gt;</span>About<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="kw">&lt;/ul&gt;</span></code></pre>
+<p>The basis of any navigation bar is the list without the bullets and other default styling:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    ul <span class="kw">{</span>
+        <span class="kw">list-style-type:</span> <span class="dt">none</span><span class="kw">;</span>
+        <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span>
+        <span class="kw">padding:</span> <span class="dt">0</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>will appear as:</p>
+<style>
+    ul.vex1 {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<div class=indent>
+    <ul class="vex1">
+      <li>
+<a href="default.asp">Home</a>
+</li>
+      <li>
+<a href="news.asp">News</a>
+</li>
+      <li>
+<a href="contact.asp">Contact</a>
+</li>
+      <li>
+<a href="about.asp">About</a>
+</li>
+    </ul>
+</div>
+
+<h3 id="vertical-navigation-bar">Vertical Navigation Bar</h3>
+<p>To build a vertical list, style the <code>&lt;a&gt;</code> element to display as block element and give then a fixed width:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    li a <span class="kw">{</span>
+        <span class="kw">display:</span> <span class="dt">block</span><span class="kw">;</span>         <span class="co">/* make link area, not just link text, clickable */</span>
+        <span class="kw">width:</span> <span class="dt">80px</span><span class="kw">;</span>            <span class="co">/* otherwise block display will use the available width in full */</span>
+    <span class="kw">}</span></code></pre>
+<hr />
+
+<p>Now add a background that changes colour when the user moves the mouse over it but mark the active page in a different colour so the user knows which page they are on.</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="co">/* List with no bullets but boxed with a background colour instead */</span>
+    ul <span class="kw">{</span>
+        <span class="kw">list-style-type:</span> <span class="dt">none</span><span class="kw">;</span>
+        <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span>
+        <span class="kw">padding:</span> <span class="dt">0</span><span class="kw">;</span>
+        <span class="kw">width:</span> <span class="dt">200px</span><span class="kw">;</span>
+        <span class="kw">background-color:</span> lightgray<span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Mark out clickable menu items one to a line */</span>
+    li a <span class="kw">{</span>
+        <span class="kw">display:</span> <span class="dt">block</span><span class="kw">;</span>
+        <span class="kw">color:</span> <span class="dt">black</span><span class="kw">;</span>
+        <span class="kw">padding:</span> <span class="dt">8px</span> <span class="dt">16px</span><span class="kw">;</span>
+        <span class="kw">text-decoration:</span> <span class="dt">none</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Change the link colour on hover */</span>
+    li a<span class="dv">:hover:not</span>(<span class="fl">.active</span>) <span class="kw">{</span>
+        <span class="kw">background-color:</span> darkgray<span class="kw">;</span>
+        <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Different background for the active menu item */</span>
+    li a<span class="fl">.active</span> <span class="kw">{</span>
+        <span class="kw">background-color:</span> <span class="dt">green</span><span class="kw">;</span>
+        <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>will appear as:</p>
+<style>
+    ul.vex2 {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        background-color: lightgray;
+    }
+
+    .vex2 li a {
+        display: block;
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+
+    .vex2 li a:hover:not(.active) {
+        background-color: darkgray;
+        color: white;
+    }
+
+    .vex2 .active {
+        background-color: green;
+        color: white;
+    }
+</style>
+
+<div class=indent>
+    <ul class="vex2">
+      <li>
+<a class="active" href="default.asp">Home</a>
+</li>
+      <li>
+<a href="news.asp">News</a>
+</li>
+      <li>
+<a href="contact.asp">Contact</a>
+</li>
+      <li>
+<a href="about.asp">About</a>
+</li>
+    </ul>
+</div>
+
+<hr />
+
+<p>Next centre the menu item text and put a border around each one and fixed the menu so that it does not scroll.</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="co">/* List with no bullets but boxed with borders and a background colour */</span>
+    ul <span class="kw">{</span>
+        <span class="kw">list-style-type:</span> <span class="dt">none</span><span class="kw">;</span>
+        <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span>
+        <span class="kw">padding:</span> <span class="dt">0</span><span class="kw">;</span>
+        <span class="kw">width:</span> <span class="dt">200px</span><span class="kw">;</span>
+        <span class="kw">background-color:</span> lightgray<span class="kw">;</span>
+        <span class="kw">border:</span> <span class="dt">1px</span> <span class="dt">solid</span> darkgray<span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Centre menu items within borders */</span>
+
+    li <span class="kw">{</span>
+        <span class="kw">text-align:</span> <span class="dt">center</span><span class="kw">;</span>
+        <span class="kw">border-bottom:</span> <span class="dt">1px</span> <span class="dt">solid</span> darkgray<span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Mark out clickable menu items one to a line */</span>
+    li a <span class="kw">{</span>
+        <span class="kw">display:</span> <span class="dt">block</span><span class="kw">;</span>
+        <span class="kw">color:</span> <span class="dt">black</span><span class="kw">;</span>
+        <span class="kw">padding:</span> <span class="dt">8px</span> <span class="dt">16px</span><span class="kw">;</span>
+        <span class="kw">text-decoration:</span> <span class="dt">none</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Change the link colour on hover */</span>
+    li a<span class="dv">:hover:not</span>(<span class="fl">.active</span>) <span class="kw">{</span>
+        <span class="kw">background-color:</span> darkgray<span class="kw">;</span>
+        <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Different background for the active menu item */</span>
+    li a<span class="fl">.active</span> <span class="kw">{</span>
+        <span class="kw">background-color:</span> <span class="dt">green</span><span class="kw">;</span>
+        <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>will appear as:</p>
+<style>
+    ul.vex3 {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        background-color: lightgray;
+        border: 1px solid black;
+    }
+
+    .vex3 li {
+        text-align: center;
+        border-bottom: 1px solid black;
+    }
+
+    .vex3 li a {
+        display: block;
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+
+    .vex3 li a:hover:not(.active) {
+        background-color: darkgray;
+        color: white;
+    }
+
+    .vex3 li a.active {
+        background-color: green;
+        color: white;
+    }
+</style>
+
+<div class=indent>
+    <ul class="vex3">
+      <li>
+<a class="active" href="default.asp">Home</a>
+</li>
+      <li>
+<a href="news.asp">News</a>
+</li>
+      <li>
+<a href="contact.asp">Contact</a>
+</li>
+      <li>
+<a href="about.asp">About</a>
+</li>
+    </ul>
+</div>
+
+<hr />
+
+<p>Finally you might want to make the menu full height and fixed so that it does not scroll with the rest of the page:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    ul <span class="kw">{</span>
+        <span class="kw">list-style-type:</span> <span class="dt">none</span><span class="kw">;</span>
+        <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span>
+        <span class="kw">padding:</span> <span class="dt">0</span><span class="kw">;</span>
+        <span class="kw">width:</span> <span class="dt">25%</span><span class="kw">;</span>
+        <span class="kw">background-color:</span> <span class="dt">#f1f1f1</span><span class="kw">;</span>
+        <span class="kw">height:</span> <span class="dt">100%</span><span class="kw">;</span>                     <span class="co">/* Full height */</span>
+        <span class="kw">position:</span> <span class="dt">fixed</span><span class="kw">;</span>                  <span class="co">/* Make it stick, even on scroll */</span>
+        <span class="kw">overflow:</span> <span class="dt">auto</span><span class="kw">;</span>                   <span class="co">/* Enable scrolling if the sidenav has too much content */</span>
+    <span class="kw">}</span></code></pre>
+<hr />
+
+<h3 id="horizontal-navigation-bar">Horizontal Navigation Bar</h3>
+<p>Horizontal navigation bars may be created using either inline or floating list items.</p>
+<p>Using <code>display:inline</code> will stop the browser adding new lines either side of an element so this can be used to display list items side-by-side.</p>
+<pre class="sourceCode css"><code class="sourceCode css">    li <span class="kw">{</span>
+        <span class="kw">display:</span> <span class="dt">inline</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>will appear as:</p>
+<style>
+    ul.hex1 {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .hex1 li {
+        display: inline;
+    }
+</style>
+
+<div class=indent>
+    <ul class="hex1">
+      <li>
+<a href="default.asp">Home</a>
+</li>
+      <li>
+<a href="news.asp">News</a>
+</li>
+      <li>
+<a href="contact.asp">Contact</a>
+</li>
+      <li>
+<a href="about.asp">About</a>
+</li>
+    </ul>
+</div>
+
+<hr />
+
+<p>Using <code>float: left</code> will display block items side-by-side so can be used to achieve a similar effect:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    li <span class="kw">{</span>
+        <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    a <span class="kw">{</span>
+        <span class="kw">display:</span> <span class="dt">block</span><span class="kw">;</span>
+        <span class="kw">padding:</span> <span class="dt">8px</span><span class="kw">;</span>
+        <span class="kw">background-color:</span> lightgray<span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>will appear as:</p>
+<style>
+    ul.hex2 {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .hex2 li {
+        float: left;
+    }
+
+    .hex2 a {
+        display: block;
+        padding: 8px;
+        background-color: lightgray;
+    }
+</style>
+
+<div class=indent>
+    <ul class="hex2">
+      <li>
+<a href="default.asp">Home</a>
+</li>
+      <li>
+<a href="news.asp">News</a>
+</li>
+      <li>
+<a href="contact.asp">Contact</a>
+</li>
+      <li>
+<a href="about.asp">About</a>
+</li>
+    </ul>
+</div>
+
+<p> </p>
+<p> </p>
+<hr />
+
+<p>Here is an example horizontal navigation bar with a dark background that changes colour when the user moves the mouse over individual items. The 'active' or current navigation link has a different background colour and the last item floats at the right hand side of the navigation bar. The menu item edges are highlighted.</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="co">/* List with no bullets but boxed with a background colour instead */</span>
+    ul <span class="kw">{</span>
+        <span class="kw">list-style-type:</span> <span class="dt">none</span><span class="kw">;</span>
+        <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span>
+        <span class="kw">padding:</span> <span class="dt">0</span><span class="kw">;</span>
+        <span class="kw">overflow:</span> <span class="dt">hidden</span><span class="kw">;</span>
+        <span class="kw">background-color:</span> darkgray<span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Horizontal list with floating items */</span>
+    li <span class="kw">{</span>
+        <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Add a right border to all list items, except the last item (last-child) */</span>
+    li <span class="kw">{</span>
+        <span class="kw">border-right:</span> <span class="dt">1px</span> <span class="dt">solid</span> <span class="dt">white</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    li<span class="dv">:last-child</span> <span class="kw">{</span>
+        <span class="kw">border-right:</span> <span class="dt">none</span><span class="kw">;</span>
+        <span class="kw">border-left:</span> <span class="dt">1px</span> <span class="dt">solid</span> <span class="dt">white</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Mark out clickable menu items one to a line */</span>
+    li a <span class="kw">{</span>
+        <span class="kw">display:</span> <span class="dt">block</span><span class="kw">;</span>
+        <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span>
+        <span class="kw">text-align:</span> <span class="dt">center</span><span class="kw">;</span>
+        <span class="kw">padding:</span> <span class="dt">14px</span> <span class="dt">16px</span><span class="kw">;</span>
+        <span class="kw">text-decoration:</span> <span class="dt">none</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Change the link colour on hover */</span>
+    li a<span class="dv">:hover:not</span>(<span class="fl">.active</span>) <span class="kw">{</span>
+        <span class="kw">background-color:</span> lightgray<span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Different background for the active menu item */</span>
+    li <span class="fl">.active</span> <span class="kw">{</span>
+        <span class="kw">background-color:</span> <span class="dt">green</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>will appear as:</p>
+<style>
+    ul.hex3 {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: darkgray;
+    }
+
+    .hex3 li {
+        float: left;
+    }
+
+    .hex3 li {
+        border-right: 1px solid white;
+    }
+
+    .hex3 li:last-child {
+        border-right: none;
+        border-left: 1px solid white;
+    }
+
+    .hex3 li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .hex3 li a:hover:not(.active) {
+        color : black;
+        background-color: lightgray;
+    }
+
+    .hex3 li .active {
+        background-color: green;
+    }
+</style>
+
+<div class=indent>
+    <ul class="hex3">
+      <li>
+<a class="active" href="default.asp">Home</a>
+</li>
+      <li>
+<a href="news.asp">News</a>
+</li>
+      <li>
+<a href="contact.asp">Contact</a>
+</li>
+      <li style="float:right">
+<a href="about.asp">About</a>
+</li>
+    </ul>
+</div>
+
+<hr />
+
+<p>Complexities abound: further changes are necessary to make the navigation bars responsive or to add drop-down menus to navigation bars.</p>
+</body>
+</html>
+
+
