@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="image-gallery-example">Image Gallery Example</h2>
+<p>CSS can be used to create an image gallery. The gallery can be made 'responsive' in that how many images are displayed side-by-side depends on the width of the display area (aka device screen).</p>
+<p>Here is the basic CSS:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    div<span class="fl">.gallery</span> <span class="kw">{</span>
+        <span class="kw">margin:</span> <span class="dt">5px</span><span class="kw">;</span>
+        <span class="kw">border:</span> <span class="dt">1px</span> <span class="dt">solid</span> <span class="dt">#ccc</span><span class="kw">;</span>
+        <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+        <span class="kw">width:</span> <span class="dt">180px</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    div<span class="fl">.gallery</span><span class="dv">:hover</span> <span class="kw">{</span>
+        <span class="kw">border:</span> <span class="dt">1px</span> <span class="dt">solid</span> <span class="dt">#777</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    div<span class="fl">.gallery</span> img <span class="kw">{</span>
+        <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span>
+        <span class="kw">height:</span> <span class="dt">auto</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    div<span class="fl">.desc</span> <span class="kw">{</span>
+        <span class="kw">padding:</span> <span class="dt">15px</span><span class="kw">;</span>
+        <span class="kw">text-align:</span> <span class="dt">center</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>and here is the corresponding HTML for a single image:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;gallery&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;a</span><span class="ot"> target=</span><span class="st">&quot;_blank&quot;</span><span class="ot"> href=</span><span class="st">&quot;forest.jpg&quot;</span><span class="kw">&gt;</span>
+            <span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;forest.jpg&quot;</span><span class="ot"> alt=</span><span class="st">&quot;Fjords&quot;</span><span class="ot"> width=</span><span class="st">&quot;300&quot;</span><span class="ot"> height=</span><span class="st">&quot;200&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;/a&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;desc&quot;</span><span class="kw">&gt;</span>Add a description of the image here<span class="kw">&lt;/div&gt;</span>
+    <span class="kw">&lt;/div&gt;</span></code></pre>
+<p>The core to making this responsive is covered later. For now:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.responsive</span> <span class="kw">{</span>
+        <span class="kw">padding:</span> <span class="dt">0</span> <span class="dt">6px</span><span class="kw">;</span>
+        <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+        <span class="kw">width:</span> <span class="dt">24.99999%</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="dv">@media</span> <span class="er">only</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:</span> <span class="er">700px){</span>
+        <span class="er">.responsive</span> <span class="dv">{</span>
+            width<span class="dv">: 49</span><span class="fl">.99999</span>%;
+            margin<span class="dv">: 6px 0;</span>
+        <span class="dv">}</span>
+    }
+
+    <span class="dv">@media</span> <span class="er">only</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:</span> <span class="er">500px){</span>
+        <span class="er">.responsive</span> <span class="dv">{</span>
+            width<span class="dv">: 100%;</span>
+        <span class="dv">}</span>
+    }</code></pre>
+<p>change the <code>width</code> property of each image to show 4, then 2 then 1 image for narrower and narrower screens.</p>
+<p>This example came without explanation and included:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    * <span class="kw">{</span>
+        <span class="kw">box-sizing:</span> <span class="dt">border-box</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="fl">.clearfix</span><span class="dv">:after</span> <span class="kw">{</span>
+        <span class="kw">content:</span> <span class="st">&quot;&quot;</span><span class="kw">;</span>
+        <span class="kw">display:</span> <span class="dt">table</span><span class="kw">;</span>
+        <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>The first means the width and height of elements includes the padding and border (but not the margin). By default only the contents is included. The seems to contradict what I had read earlier in the same tutorial</p>
+<p>The purpose of the <code>clearfix</code> class is unclear but I think it is a kind of 'line break' after the image gallery and presumably is more effective that placing the image gallery into some container element.</p>
+</body>
+</html>
+
+
