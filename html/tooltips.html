@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="tool-tips-example">Tool-Tips Example</h2>
+<p>A tool-tip appears when the user moves the mouse pointer over an element. It typically provide extra information.</p>
+<p>Tool-tips are implemented as simple drop-downs with extra positioning information and sometimes a 'caret'. Note that the examples here use the <code>visibility</code> property rather than the <code>display</code> property.</p>
+<hr />
+
+<p>Here is the CSS for a basic tool-tip example:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="co">/* Tool-tip container */</span>
+    <span class="fl">.tooltip</span> <span class="kw">{</span>
+        <span class="kw">position:</span> <span class="dt">relative</span><span class="kw">;</span>
+        <span class="kw">display:</span> <span class="dt">inline-block</span><span class="kw">;</span>
+        <span class="kw">border-bottom:</span> <span class="dt">1px</span> <span class="dt">dotted</span> <span class="dt">black</span><span class="kw">;</span>        <span class="co">/* If you want dots under the hoverable text */</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Tool-tip text */</span>
+    <span class="fl">.tooltip</span> <span class="fl">.tooltiptext</span> <span class="kw">{</span>
+        <span class="kw">visibility:</span> <span class="dt">hidden</span><span class="kw">;</span>
+        <span class="kw">width:</span> <span class="dt">120px</span><span class="kw">;</span>
+        <span class="kw">background-color:</span> <span class="dt">black</span><span class="kw">;</span>
+        <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span>
+        <span class="kw">text-align:</span> <span class="dt">center</span><span class="kw">;</span>
+        <span class="kw">padding:</span> <span class="dt">5px</span> <span class="dt">0</span><span class="kw">;</span>
+        <span class="kw">border-radius:</span> <span class="dt">6px</span><span class="kw">;</span>
+
+        <span class="co">/* Position the tool-tip text - not very good (see examples below) */</span>
+        <span class="kw">position:</span> <span class="dt">absolute</span><span class="kw">;</span>
+        <span class="kw">z-index:</span> <span class="dt">1</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="co">/* Show the tool-tip text when you mouse over the tool-tip container */</span>
+    <span class="fl">.tooltip</span><span class="dv">:hover</span> <span class="fl">.tooltiptext</span> <span class="kw">{</span>
+        <span class="kw">visibility:</span> <span class="dt">visible</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>and here is the HTML:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;tooltip&quot;</span><span class="kw">&gt;</span>Hover over me ...
+        <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;tooltiptext&quot;</span><span class="kw">&gt;</span>Tooltip text<span class="kw">&lt;/span&gt;</span>
+    <span class="kw">&lt;/div&gt;</span></code></pre>
+<p>will appear as:</p>
+<style>
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+
+        /* Position the tool-tip text - not very good (see examples below) */
+        position: absolute;
+        z-index: 1;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+</style>
+
+<div class="indent ex1">
+    <div class="tooltip">
+Hover over me <span class="tooltiptext">Tooltip text</span>
+</div>
+</div>
+
+<hr />
+
+<p>Positioning to tool-tip text relies on the use of <code>display=relative</code> in the container and <code>display=absolute</code> for the tool-tip. The results may appear counter-intuitive because the point of reference may not be what you expect.</p>
+<p>To place the tool-tip to the left of the container:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.tooltip</span> <span class="fl">.tooltiptext</span> <span class="kw">{</span>
+        <span class="kw">top:</span> <span class="dt">-5px</span><span class="kw">;</span>      <span class="co">/* negative of whatever padding is used for the container */</span>
+        <span class="kw">left:</span> <span class="dt">105%</span><span class="kw">;</span>     <span class="co">/* all the way to the left and then some so there is a gap */</span>
+    <span class="kw">}</span>;</code></pre>
+<p>To place the tool-tip over the container:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.tooltip</span> <span class="fl">.tooltiptext</span> <span class="kw">{</span>
+        <span class="kw">width:</span> <span class="dt">120px</span><span class="kw">;</span>
+        <span class="kw">margin-left:</span> <span class="dt">-60px</span><span class="kw">;</span>     <span class="co">/* Use half of the width to centre the tool-tip */</span>
+        <span class="kw">bottom:</span> <span class="dt">100%</span><span class="kw">;</span>
+        <span class="kw">left:</span> <span class="dt">50%</span><span class="kw">;</span>              <span class="co">/* In conjunction with the margin-left</span>
+<span class="co">}</span></code></pre>
+<hr />
+
+<p>The caret is created as follows. Imagine a tidy box, say 5px, with a solid border also 5px. It would be a little solid box. It the border is only one side, the quarter that is filled in looks like a little pyramid.</p>
+<p>Position it correctly and you have the appearance of a caret attached to the tool-tip.</p>
+<style>
+    .ex2 .tooltip .tooltiptext::after {
+        content: " ";
+        position: absolute;
+        bottom: 100%;   /* At the top of the tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent black transparent;
+    }
+</style>
+
+<div class="indent ex1 ex2">
+    <div class="tooltip">
+Hover over me <span class="tooltiptext">Tooltip text</span>
+</div>
+</div>
+
+<p>For a caret on the bottom of a tool-tip:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.tooltip</span> <span class="fl">.tooltiptext</span><span class="dv">::after</span> <span class="kw">{</span>
+        <span class="kw">content:</span> <span class="st">&quot; &quot;</span><span class="kw">;</span>
+        <span class="kw">position:</span> <span class="dt">absolute</span><span class="kw">;</span>
+        <span class="kw">top:</span> <span class="dt">100%</span><span class="kw">;</span>      <span class="co">/* At the bottom of the tooltip */</span>
+        <span class="kw">left:</span> <span class="dt">50%</span><span class="kw">;</span>
+        <span class="kw">margin-left:</span> <span class="dt">-5px</span><span class="kw">;</span>
+        <span class="kw">border-width:</span> <span class="dt">5px</span><span class="kw">;</span>
+        <span class="kw">border-style:</span> <span class="dt">solid</span><span class="kw">;</span>
+        <span class="kw">border-color:</span> <span class="dt">black</span> <span class="dt">transparent</span> <span class="dt">transparent</span> <span class="dt">transparent</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>For a caret on the top of a tool-tip change this so that:</p>
+<pre class="sourceCode css"><code class="sourceCode css">        bottom<span class="dv">:</span> 100%;   <span class="co">/* At the top of the tooltip */</span>
+        left<span class="dv">:</span> 50%;
+        border-color<span class="dv">:</span> transparent transparent black transparent;</code></pre>
+<p>For a caret on the left:</p>
+<pre class="sourceCode css"><code class="sourceCode css">        top<span class="dv">:</span> 50%;
+        right<span class="dv">:</span> 100%;    <span class="co">/* To the left of the tooltip */</span>
+        border-color<span class="dv">:</span> transparent black transparent transparent;</code></pre>
+<p>For a caret on the right:</p>
+<pre class="sourceCode css"><code class="sourceCode css">        top<span class="dv">:</span> 50%;
+        left<span class="dv">:</span> 100%;     <span class="co">/* To the right of the tooltip */</span>
+        border-color<span class="dv">:</span> transparent transparent transparent black;</code></pre>
+<hr />
+
+<p>A combination of the CSS3 transition and opacity properties can be used to give a tool-tip to appearance of fading in.</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.tooltip</span> <span class="fl">.tooltiptext</span> <span class="kw">{</span>
+        <span class="kw">opacity:</span> <span class="dt">0</span><span class="kw">;</span>
+        <span class="kw">transition:</span> opacity <span class="dt">1s</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="fl">.tooltip</span><span class="dv">:hover</span> <span class="fl">.tooltiptext</span> <span class="kw">{</span>
+        <span class="kw">opacity:</span> <span class="dt">1</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+</body>
+</html>
+
+
