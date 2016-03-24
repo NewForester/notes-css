@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="attribute-selectors">Attribute Selectors</h2>
+<p>CSS selectors choose the elements to which a style rule applies, for example, on the basis of class.</p>
+<p>Here we are concerned with selecting elements on the basis of their attributes.</p>
+<p>This example selects all links with an explicit <code>target</code> attribute:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    a<span class="ch">[target]</span> <span class="kw">{</span> <span class="kw">background-color:</span> <span class="dt">yellow</span> <span class="kw">}</span></code></pre>
+<p>The next sophistication is selecting on the basis of the attribute and its value:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    a<span class="ch">[target=</span><span class="st">&quot;_blank&quot;</span><span class="ch">]</span> <span class="kw">{</span> <span class="kw">background-color:</span> <span class="dt">yellow</span> <span class="kw">}</span></code></pre>
+<p>The other selectors have syntax reminiscent of regular expressions:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="ch">[title=</span><span class="st">&quot;xyz&quot;</span><span class="ch">]</span> <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>               <span class="co">/* elements whose title is &quot;xyz&quot; */</span>
+    <span class="ch">[title^=</span><span class="st">&quot;xyz&quot;</span><span class="ch">]</span> <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>              <span class="co">/* elements whose title begins with &quot;xyz&quot; */</span>
+    <span class="ch">[title$=</span><span class="st">&quot;xyz&quot;</span><span class="ch">]</span> <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>              <span class="co">/* elements whose title end with &quot;xyz&quot; */</span>
+    <span class="ch">[title*=</span><span class="st">&quot;xyz&quot;</span><span class="ch">]</span> <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>              <span class="co">/* elements whose title contains &quot;xyz&quot; */</span>
+    <span class="ch">[title~=</span><span class="st">&quot;xyz&quot;</span><span class="ch">]</span> <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>              <span class="co">/* elements whose title contains the word &quot;xyz&quot; */</span>
+    <span class="ch">[title|=</span><span class="st">&quot;xyz&quot;</span><span class="ch">]</span> <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>              <span class="co">/* elements whose title begins with the word &quot;xyz&quot; (or &quot;xyz-&quot;) */</span></code></pre>
+<p>Attribute selectors are useful for styling elements without class or id. Of particular interest are input forms, which are covered next.</p>
+</body>
+</html>
+
+
