@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-counters">CSS Counters</h2>
+<p>CSS counters are simple accumulators for simple tasks like generating section numbers. They are not general purpose 'variables'.</p>
+<p>They can be reset and incremented but they cannot even be assigned an initial value. Beyond numbering sequences such as header and perhaps lists, they look like a solution in search of a problem.</p>
+<p>Here is an example that increments section and subsection numbers and automatically inserts them into headers:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    body <span class="kw">{</span>
+        <span class="kw">counter-reset:</span> section<span class="kw">;</span>
+    <span class="kw">}</span>
+
+    h1 <span class="kw">{</span>
+        <span class="kw">counter-reset:</span> subsection<span class="kw">;</span>
+    <span class="kw">}</span>
+
+    h1<span class="dv">::before</span> <span class="kw">{</span>
+        <span class="kw">counter-increment:</span> section<span class="kw">;</span>
+        <span class="kw">content:</span> <span class="st">&quot;Section &quot;</span> <span class="dt">counter(</span>section<span class="dt">)</span> <span class="st">&quot;. &quot;</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    h2<span class="dv">::before</span> <span class="kw">{</span>
+        <span class="kw">counter-increment:</span> subsection<span class="kw">;</span>
+        <span class="kw">content:</span> <span class="dt">counter(</span>section<span class="dt">)</span> <span class="st">&quot;.&quot;</span> <span class="dt">counter(</span>subsection<span class="dt">)</span> <span class="st">&quot; &quot;</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>Here is an unrealistic example of numbering (nested) list items:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    ol <span class="kw">{</span>
+        <span class="kw">counter-reset:</span> section<span class="kw">;</span>
+        <span class="kw">list-style-type:</span> <span class="dt">none</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    li<span class="dv">::before</span> <span class="kw">{</span>
+        <span class="kw">counter-increment:</span> section<span class="kw">;</span>
+        <span class="kw">content:</span> <span class="dt">counters(</span>section,<span class="st">&quot;.&quot;</span><span class="dt">)</span> <span class="st">&quot; &quot;</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>Note the use of <code>counters(name,separator)</code> instead of <code>counter(name)</code>.</p>
+</body>
+</html>
+
+
