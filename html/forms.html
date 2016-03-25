@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-and-forms">CSS and Forms</h2>
+<p>The appearance of HTML forms can be greatly improved through judicious use of CSS.</p>
+<p>Often attribute selectors are used:</p>
+<ul>
+<li>`input[type=text] - styling for text fields</li>
+<li>`input[type=password] - styling for password fields</li>
+<li>`input[type=number] - styling for number fields</li>
+<li>etc.</li>
+</ul>
+<p>Style properties often set for form fields include:</p>
+<ul>
+<li>width;</li>
+<li>padding and margin;</li>
+<li>border and border-radius;</li>
+<li>background-color and (text) color;</li>
+</ul>
+<p>Note: with CSS3 is it common to include the padding and borders in the total width and height of input fields using <code>box-sizing: border-box;</code>.</p>
+<p>Menus created using the <code>&lt;select&gt;</code> element can be styled directly.</p>
+<p>By default, a text area has a 'grabber' in the bottom right hand corner that allows the field to be resized. Use <code>resize: none;</code> to disallow this. The text area will still sprout a vertical scroll bar as necessary.</p>
+<p>Input buttons might well be styled as a group:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    input<span class="ch">[type=button]</span>, input<span class="ch">[type=submit]</span>, input<span class="ch">[type=reset]</span> <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span></code></pre>
+<hr />
+
+<p>Highlighting the field with 'focus' is common.</p>
+<p>By default, some browsers add a blue line around the field focus. You may remove this with <code>outline: none;</code>.</p>
+<p>You may add you own highlighting by changing the field's border or background colour as in:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    input<span class="ch">[type=text]</span><span class="dv">:focus</span> <span class="kw">{</span>
+        <span class="kw">background-color:</span> lightblue<span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>An icon (such as a search icon) can be placed inside an input field using the background property. Use the <code>padding</code> attribute to make way for the icon.</p>
+<p>Using features new with CSS3, a transition effect can be made to occur when an input field gains focus.</p>
+<p>Here is example CSS3:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    input<span class="ch">[type=text]</span> <span class="kw">{</span>
+        <span class="kw">box-sizing:</span> <span class="dt">border-box</span><span class="kw">;</span>
+        <span class="kw">border:</span> <span class="dt">2px</span> <span class="dt">solid</span> <span class="dt">#ccc</span><span class="kw">;</span>
+        <span class="kw">border-radius:</span> <span class="dt">4px</span><span class="kw">;</span>
+        <span class="kw">font-size:</span> <span class="dt">16px</span><span class="kw">;</span>
+
+        <span class="kw">background-color:</span> <span class="dt">white</span><span class="kw">;</span>
+        <span class="kw">background-image:</span> <span class="dt">url(</span><span class="st">&#39;../images/searchicon.png&#39;</span><span class="dt">)</span><span class="kw">;</span>
+        <span class="kw">background-position:</span> <span class="dt">10px</span> <span class="dt">10px</span><span class="kw">;</span>
+        <span class="kw">background-repeat:</span> <span class="dt">no-repeat</span><span class="kw">;</span>
+        <span class="kw">padding:</span> <span class="dt">12px</span> <span class="dt">20px</span> <span class="dt">12px</span> <span class="dt">40px</span><span class="kw">;</span>
+
+        <span class="kw">width:</span> <span class="dt">130px</span><span class="kw">;</span>
+        <span class="kw">transition:</span> width <span class="dt">0.4s</span> ease-in-out<span class="kw">;</span>
+    <span class="kw">}</span>
+
+    input<span class="ch">[type=text]</span><span class="dv">:focus</span> <span class="kw">{</span>
+        <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>The example HTML is simple:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    <span class="kw">&lt;form&gt;</span>
+        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;search&quot;</span><span class="ot"> placeholder=</span><span class="st">&quot;Search...&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;/form&gt;</span></code></pre>
+<p>will appear as:</p>
+<style>
+    input[type=text] {
+        width: 130px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url('../images/searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    }
+
+    input[type=text]:focus {
+        width: 100%;
+    }
+</style>
+
+<div class=indent>
+    <form>
+        
+<input type="text" name="search" placeholder="Search...">
+</form>
+</div>
+
+</body>
+</html>
+
+
