@@ -92,5 +92,7 @@ Note: the double colon syntax for pseudo elements is new with CSS3.
 Before that a single colon was used.
 The single colon is accepted for backwards compatibility but should not be used in new code.
 
+See also [CSS3 Attribute Selectors](attribute-selectors.html).
+
 </body>
 </html>
