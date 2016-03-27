@@ -40,5 +40,26 @@ This generally saves a lot of work if you respect the DRY principle.
 
 CSS can be used to define styles with variations for different devices and screen sizes.
 
+## CSS3 Modules
+
+CSS3 is the latest standard for CSS.
+It is backwards compatible with earlier versions of CSS.
+
+The specification has been split into modules.
+Some modules are new but others comprise parts of the old specification with enhancements.
+Modern browsers implement most of the new specification.
+
+The most important CSS3 modules are:
+
+  * selectors;
+  * box model;
+  * backgrounds and borders;
+  * image values and replaced content;
+  * text effects;
+  * 2D and 3D transformations;
+  * animations;
+  * multiple column layout;
+  * user interface;
+
 </body>
 </html>
