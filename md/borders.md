@@ -78,7 +78,15 @@ The `border-radius` property may be used a round the corners where borders meet:
     }
 ```
 
+
+The `border-radius` is a shorthand property for:
+`border-top-left-radius`, `border-top-right-radius`,
+`border-bottom-right-radius` and `border-bottom-left-radius.
+
 The larger the radius, the more pronounced the rounding.
+A single radius (e.g. `25px`) gives a round corner;
+a pair (e.g. 15px/50px) gives an elliptical corner.
+A percentage (e.g 50%) gives an ellipse.
 
 </body>
 </html>
