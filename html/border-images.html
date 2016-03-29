@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-border-images">CSS Border Images</h2>
+<p>The <code>border-image</code> property allows an image to be used for the border around an element. It has only recently been fully supported.</p>
+<p>Note: the <code>border-image</code> property will not work unless the <code>border</code> property is set.</p>
+<p>The <code>border-image</code> property is a shorthand property:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">#borderimg</span> <span class="kw">{</span>
+      <span class="kw">border:</span> <span class="dt">10px</span> <span class="dt">solid</span> <span class="dt">transparent</span><span class="kw">;</span>
+      <span class="kw">border-image:</span> <span class="dt">url(</span>border<span class="dt">.</span>png<span class="dt">)</span> <span class="dt">30</span> round<span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>is equivalent to:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">#borderimg</span> <span class="kw">{</span>
+      <span class="kw">border:</span> <span class="dt">10px</span> <span class="dt">solid</span> <span class="dt">transparent</span><span class="kw">;</span>
+      <span class="kw">border-image-source:</span> <span class="dt">url(</span>border<span class="dt">.</span>png<span class="dt">)</span><span class="kw">;</span>
+      <span class="kw">border-image-slice:</span> <span class="dt">30</span><span class="kw">;</span>
+      <span class="kw">border-image-repeat:</span> round<span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>These three properties are required. The full set are:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">#borderimg</span> <span class="kw">{</span>
+      <span class="kw">border-image-source:</span>  <span class="dt">...</span><span class="kw">;</span>
+      <span class="kw">border-image-slice:</span>   <span class="dt">...</span><span class="kw">;</span>
+      <span class="kw">border-image-width:</span>   <span class="dt">...</span><span class="kw">;</span>
+      <span class="kw">border-image-outset:</span>  <span class="dt">...</span><span class="kw">;</span>
+      <span class="kw">border-image-repeat:</span>  <span class="dt">...</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<hr /><!-- Border Image Source -->
+
+<p>The <code>border-image-source</code> property specifies the image to used to display the border.</p>
+<p>It can be expressed as a URL or take one of the values <code>none</code>, <code>initial</code> or <code>inherit</code>.</p>
+<p>When <code>none</code>, the border image properties are ignored and the conventional border properties are used instead.</p>
+<hr /><!-- Border Image Slice -->
+
+<p>The <code>border-image-slice</code> property specifies how to slice the image. It can be expressed as numbers, percentages or take one of the values <code>fill</code>, <code>initial</code> or <code>inherit</code>.</p>
+<p>The images is always sliced into nine tiles: four 'corners', four 'edges' and the 'middle'. The 'middle' tile is treated as fully transparent unless the <code>fill</code> keyword is given.</p>
+<p>The property consists of potentially three values: slice in the horizontal, slice in the vertical and fill.</p>
+<p>When expressed as numbers, the numbers represent pixels for raster images and co-ordinates for vector images.</p>
+<p>When expressed as percentages, they are relative to the width/height of the element's box.</p>
+<p>The tutorial makes no attempt to explain how to choose the values and, indeed, it is not at all obvious why the values given in the examples should produced the effects they do.</p>
+<hr /><!-- Border Image Width -->
+
+<p>The <code>border-image-width</code> property is the width of the border image. It can be expressed as a length (e.g. pixels), a number, a percentage or take one of the values <code>auto</code>, <code>initial</code> or <code>inherit</code>.</p>
+<p>When expressed as a number, the property's value is the product of the number and the <code>border-width</code> property's value.</p>
+<p>When expressed as a percentage, it is relative to the width/height of the element's box.</p>
+<p>With <code>auto</code>, the property's value is the image's width/height.</p>
+<p>As with the conventional border properties, the property may take one to four values.</p>
+<hr /><!-- Border Image Outset -->
+
+<p>The <code>border-image-outset</code> property is the distance the border image is 'outset' from the conventional border. It can be expressed as a length (e.g. pixels), a number or take one of the values <code>auto</code>, <code>initial</code> or <code>inherit</code>.</p>
+<p>When expressed as a number, the property's value is the product of the number and the <code>border-width</code> property's value.</p>
+<p>As with the conventional border properties, the property may take one to four values.</p>
+<hr /><!-- Border Image Repeat -->
+
+<p>The <code>border-image-repeat</code> property can take the values <code>round</code>, <code>space</code>, <code>stretch</code>, <code>repeat</code>, <code>initial</code> and <code>inherit</code>.</p>
+<p>With <code>stretch</code> the 'edge' tiles of the image are scaled to fit, resulting in very wide and tall tiles.</p>
+<p>With <code>repeat</code>, <code>space</code> and <code>round</code>, the 'edge' tiles are repeated to fill the border width or height. They differ in how the half tiles adjacent to the corners are filled:</p>
+<ul>
+<li><code>repeat</code> will use a clipped tile image;</li>
+<li><code>space</code> will use blank space;</li>
+<li><code>round</code> will use another whole tile image and then scale the tiles to fit neatly.</li>
+</ul>
+<hr />
+
+</body>
+</html>
+
+
