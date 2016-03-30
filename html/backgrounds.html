@@ -14,9 +14,9 @@
     }</code></pre>
 <p>and</p>
 <pre class="sourceCode html"><code class="sourceCode html">    body {
-      background-color: url(&quot;image&quot;);
+      background-image: url(&quot;image.gif&quot;);
     }</code></pre>
-<p>but there seems little point in using both on the same element.</p>
+<p>there mmight seem little point in using both on the same element, but the browser will fall back to the colour should the image not be found.</p>
 <p>The 'colour-value' is a name, RGB or HEX colour value; the 'image' is a valid URL. Note the required <code>url(...)</code> syntax.</p>
 <p>When using a background image, several other attributes may be useful.</p>
 <hr />
@@ -42,17 +42,59 @@
 
 <p>The shorthand <code>background</code> property may be used to set several properties in one statement:</p>
 <pre class="sourceCode html"><code class="sourceCode html">    body {
-      background: #ffffff url(&quot;img_tree.png&quot;) no-repeat fixed right top;
+      background: #ffffff url(&quot;image.png&quot;) no-repeat fixed right top;
     }</code></pre>
 <p>is equivalent to:</p>
 <pre class="sourceCode html"><code class="sourceCode html">    body {
       background-color: #ffffff;
-      background-image: url(&quot;img_tree.png&quot;);
+      background-image: url(&quot;image.png&quot;);
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-position: right top;
     }</code></pre>
-<p>'No change' values may be ommitted as along as the value that are given are in the order shown.</p>
+<p>'No change' values may be omitted as along as the value that are given are in the order shown.</p>
+<hr />
+
+<h2 id="css3-backgrounds">CSS3 Backgrounds</h2>
+<p>CCC3 allows multi-backgrounds and adds three new properties:</p>
+<ul>
+<li>background-size</li>
+<li>background-origin</li>
+<li>background-clip</li>
+</ul>
+<hr /><!--Background Size -->
+
+<p>The <code>background-size</code> property allows the size of the background image to be specified independently of the image size.</p>
+<p>It can be expressed as a length, a percentage or as one of the keywords <code>contain</code> or <code>cover</code>.</p>
+<p>With the <code>contain</code> keyword the image is scaled without distortion and without being clipped to cover as much of the background as possible.</p>
+<p>With the <code>cover</code> keyword the image is scaled without distortion to cover the entire background and then clipped to fit.</p>
+<p>To specify a background image that covers the entire browser window at all times use:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    html <span class="kw">{</span>
+      <span class="kw">background:</span> <span class="dt">url(</span>image<span class="dt">.</span>png<span class="dt">)</span> <span class="dt">no-repeat</span> <span class="dt">center</span> <span class="dt">fixed</span><span class="kw">;</span>
+      <span class="kw">background-size:</span> cover<span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<hr /><!--Background Origin and Clip -->
+
+<p>The <code>background-origin</code> property gives the area, relative to the element's box, that should be covered by the background image:</p>
+<ul>
+<li>border-box - the background image also covers the box margins;</li>
+<li>padding-box - the background image covers the box padding but not the margins;</li>
+<li>content-box - the background image covers the contents area only;</li>
+</ul>
+<p>The default is <code>padding-box</code>.</p>
+<p>The <code>background-clip</code> property gives the area relative to the element's box that should be covered by the background colour.</p>
+<p>It does for the background colour what <code>background-origin</code> does for the background image. However, the default is <code>border-box</code>.</p>
+<hr /><!-- Multiple backgrounds -->
+
+<p>Multiple backgrounds is an 'and', not an 'or'. Each background has its own properties. The properties are now comma separated lists:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    background-image<span class="dv">:</span> url(image<span class="fl">.gif</span>), url(wallpaper<span class="fl">.gif</span>);
+    background-position<span class="dv">:</span> right bottom, left top;
+    background-repeat<span class="dv">:</span> no-repeat, repeat;</code></pre>
+<p>and the same for the shorthand background property:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    background<span class="dv">:</span> url(image<span class="fl">.gif</span>) right bottom no-repeat, url(wallpaper<span class="fl">.gif</span>) left top</code></pre>
+<p>The first background covers the second, covers the third ...</p>
+<hr />
+
 </body>
 </html>
 
