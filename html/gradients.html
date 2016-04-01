@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-gradients">CSS Gradients</h2>
+<p>CSS3 gradient allow a background to transition smoothly between two or more colours. Before these, background image were used but these required significant bandwidth and did not always zoom well.</p>
+<p>There are four gradient properties:</p>
+<ul>
+<li>linear-gradient - the transition is across and/or down the element box</li>
+<li>radial-gradient - the transition is outwards from the centre</li>
+<li>repeating-linear-gradient - the transition reverses and repeats itself</li>
+<li>repeating-radial-gradient - the transition reverses and repeats itself</li>
+</ul>
+<p>Their syntax is rather like a function call (in most programming languages):</p>
+<pre class="css3"><code>     background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);</code></pre>
+<p>A gradient requires at least two colour stops: the transition being from the first to the second. There may be more just as a journey may have stopping points as well as a start and a final destination.</p>
+<p>There is also the direction of the transition. By default, the transition is <code>top</code>, which means top to bottom. You can also use <code>to top</code>, <code>to right</code>, <code>to left</code> and <code>to bottom</code>.</p>
+<p>It is also possible to have a diagonal gradient. Specify the corner to which the gradient is to transition. Try <code>to bottom right</code> etc.</p>
+<p>For finer control, you can give the gradient in degrees. <code>0deg</code>, <code>90deg</code>, <code>180deg</code> and <code>-90deg</code> are the same as <code>to top</code> etc.</p>
+<p>By using RGBA or HSLA colours you can transition from transparent to opaque without changing colour.</p>
+<p>By using several colour stops you can achieve a rainbow effect.</p>
+<style>
+#grad1 {
+    height: 55px;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
+</style>
+</head>
+<body>
+
+<div id="grad1" style="text-align:center;margin:auto;color:#888888;font-size:40px;font-weight:bold">
+</div>
+
+<p>By default, the colour stops are equally spaced but the use of percentages can alter this. How to choose the values other than by trial and error is not known at this time.</p>
+<p>How the <code>repeating-linear-gradient</code> works is not clear. Certainly it seems the first colour must not have a percentage.</p>
+<p>The syntax for the radial gradients is:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    background<span class="dv">:</span> radial-gradient(shape size at position, start-colour, <span class="fl">...</span>, last-colour);</code></pre>
+<p>The default shape is <code>ellipse</code>, the alternative is <code>circle</code>.</p>
+<p>The size is one of:</p>
+<ul>
+<li>closest-side</li>
+<li>farthest-side</li>
+<li>closet-corner</li>
+<li>farthest-corner</li>
+</ul>
+<p>with, it seems the interpretation, the 'transition ends here'.</p>
+<p>The position is the centre from which the gradient radiates. Two percentages give the centre with respect to the element's box.</p>
+</body>
+</html>
+
+
