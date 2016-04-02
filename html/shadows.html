@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css-shadows">CSS Shadows</h2>
+<p>With CSS3, shadows can be added to text and element (boxes) using the attributes:</p>
+<ul>
+<li><code>text-shadow</code> and</li>
+<li><code>box-shadow</code></li>
+</ul>
+<p>In their simplest form, these are a (black) shadow with a horizontal and vertical offset:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    text-shadow<span class="dv">:</span> 2px 2px;
+    box-shadow<span class="dv">:</span> 10px 10px;</code></pre>
+<p>The shadow may be given a colour:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    text-shadow<span class="dv">:</span> 2px 2px red;
+    box-shadow<span class="dv">:</span> 10px 10px grey;</code></pre>
+<p>It may also have a blurring effect:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    text-shadow<span class="dv">:</span> 2px 2px 5px red;
+    box-shadow<span class="dv">:</span> 10px 10px 5px grey;</code></pre>
+<p>A 'neon glow' effect is a shadow with a blur but no offset:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    text-shadow<span class="dv">:</span> 0 0 3px red;</code></pre>
+<p>Several shadows are allowed:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    color<span class="dv">:</span> white;
+    text-shadow<span class="dv">:</span> 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;</code></pre>
+<style>
+    #halo {
+        color: white;
+        text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    }
+</style>
+
+<div class="indent">
+    <h1 id=halo>
+Text halo effect !
+</h1>
+</div>
+
+<p>Using four 'shadows' it is possible to outline text:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    color<span class="dv">:</span> yellow;
+    text-shadow<span class="dv">:</span> -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;</code></pre>
+<style>
+    #outline {
+        color: yellow;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+</style>
+
+<div class="indent">
+    <h1 id=outline>
+Text outline effect !
+</h1>
+</div>
+
+<p>Card effects may be created around element boxes (particularly those containing images) using more than one shadow and RGBA colours to achieve transparency effects.</p>
+</body>
+</html>
+
+
