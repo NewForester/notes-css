@@ -8,7 +8,7 @@
 <h2 id="css-font-properties">CSS Font Properties</h2>
 <p>A HTML element has several font properties that affect any text content:</p>
 <ul>
-<li>font-family: - font families are serif, sans-serif and monospace;</li>
+<li>font-family: - font families are serif, sans-serif and mono-space;</li>
 <li>font-size: - either absolute (px) or relative (em);</li>
 <li>font-style: - one of [normal, italic, oblique];</li>
 <li>font-variant: - one of [normal, small-caps];</li>
@@ -20,7 +20,7 @@
 <p>The font family is a comma separated list of font names (from the same font family) terminated by the family name. The list is a fall-back system: the first font in the list is preferred but if it is not available, the next is considered and so on:</p>
 <pre class="sourceCode html"><code class="sourceCode html">    p { font-family: &quot;Times New Roman&quot;, Times, serif; }</code></pre>
 <p>There is a default font for each family but it is system dependent. There are recommended combinations but they do not look cross-platform.</p>
-<p>There are (Google) fonts on-line that are downloaded on the fly.</p>
+<p>There are (Google) fonts on-line that are downloaded on the fly. See Web Fonts below.</p>
 <hr /><!-- Font Size -->
 
 <p>The font size is absolute if specified in pixels. This is viewed as bad for accessibility as the user cannot change the text size.</p>
@@ -31,7 +31,7 @@
 <hr /><!-- Shorthand -->
 
 <p>The shorthand <code>font</code> property may be used to set several properties in one statement:</p>
-<pre class="sourceCode html"><code class="sourceCode html">    p { font:italic normal bold 12px/30px Georgia, serif; }</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html">    p { font: italic normal bold 12px/30px Georgia, serif; }</code></pre>
 <p>is equivalent to:</p>
 <pre class="sourceCode html"><code class="sourceCode html">    p {
       font-style:     italic;
@@ -40,7 +40,39 @@
       font-size:      12px/30px;
       font-family:    Georgia, serif;
     }</code></pre>
-<p>'No change' values may be ommitted as along as the values that are given are in the order shown.</p>
+<p>'No change' values may be omitted as along as the values that are given are in the order shown.</p>
+<h2 id="css3-web-fonts">CSS3 Web Fonts</h2>
+<p>With CSS3, web pages are no longer 'forced' to use only 'web-safe' fonts installed on the client machine.</p>
+<p>The <code>@font-face</code> rule declares a font that can be downloaded and when to use it.</p>
+<pre class="css3"><code>@font-face {
+    src: url(sansation_light.woff);
+    font-family: myFirstFont;
+}
+
+@font-face {
+    src: url(sansation_bold.woff);
+    font-family: myFirstFont;
+    font-weight: bold;
+}</code></pre>
+<p>The <code>src</code> attributes identify where the font is available for download. The <code>font-family</code> and <code>font-weight</code> attributes identify when to use the downloaded font. In this context, they are referred to as font descriptors.</p>
+<p>Note: yes, the <code>bold</code> means render a special version of the font, not render the font in a special way.</p>
+<p>The font descriptors that can be used in a <code>@font-face</code> rule are:</p>
+<ul>
+<li><code>font-family</code> - required - names the font</li>
+<li><code>src</code> - required - URL of the font file for download</li>
+<li><code>font-style</code> - [normal, italic, oblique]</li>
+<li><code>font-weight</code> - [normal, bold, 100, 200, ... 900]</li>
+<li><code>font-stretch</code> - [normal, expanded, [, ultra-, extra-, semi-]condensed, [, ultra-, extra-, semi-]expanded]</li>
+<li><code>unicode-range</code> - the range of Unicode characters supported, default &quot;U+0-10FFFF&quot;</li>
+</ul>
+<hr />
+
+<p>True Type Fonts (TTF) adhere to a standard developed for PCs in the late 1980s by Apple and Microsoft.</p>
+<p>OpenType Fonts (OTF) are scalable fonts based on TTF developed by Microsoft.</p>
+<p>Web Open Font Format (WOFF) is TTF and OTF with compression for web use from 2009. A W3C recommendation. Version 2.0 provides better compression.</p>
+<p>SVG fonts allow SVG glyphs to be used when displaying text. SVG 1.1 allows a font module embedded with an SVG document. CSS can be applied to SVG documents and <code>@font-face</code> to text in SVG documents.</p>
+<p>Embedded OpenType Fonts (EOT) compact OTF by Microsoft for use as embedded font on web pages.</p>
+Only IE supports EOF. Mozilla is/was late to support SVG.
 </body>
 </html>
 
