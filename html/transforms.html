@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css3-transforms">CSS3 Transforms</h2>
+<p>Elements may be translated (moved), rotated, scaled and skewed using CSS transforms.</p>
+<p>Transforms in two dimensions are within the x-y axis of the web-page.</p>
+<p>The syntax is again that of a function:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    transform<span class="dv">:</span> rotate(20deg);</code></pre>
+<p>This will rotate the element 20° clockwise. A negative value will rotate anit-clockwise.</p>
+<p>While you might expect the rotation to be about the 'centre' of the element this may not be what happens in practice. I suspect this is done and then an implicit translation is done to keep the rotated element within its containing object.</p>
+<p>All the 2D transform methods can be combined into one <code>matrix</code> transform (according to the tutorial - it is not self-evident that rotation is included):</p>
+<pre class="sourceCode css"><code class="sourceCode css">    transform<span class="dv">:</span>  matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())<span class="dv">:</span></code></pre>
+<p>Yes, the order is correct.</p>
+<p>The <code>matrix</code> transform may be thought of as a summary transform for:</p>
+<pre class="ccs"><code>    transform:  scale(X,Y)      # factor to scale by
+    transform:  skew(X,Y)       # degrees to skew by
+    transform:  translate(X,Y)  # pixels to moved the element by</code></pre>
+<p>These are themselves summary transforms for <code>scaleX()</code>, ... <code>translateY()</code>.</p>
+<p>I'm not entirely clear about the units and the effect may not always be what you expect.</p>
+<p>There is a second property <code>transform-origin</code> which is not covered by the tutorial at all.</p>
+</body>
+</html>
+
+
