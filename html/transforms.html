@@ -5,23 +5,35 @@
 <body>
 
 <h1 id="css3">CSS3</h1>
-<h2 id="css3-transforms">CSS3 Transforms</h2>
+<p>The tutorial does not cover 2D and 3D transitions well. I will have to rewrite this page from scratch someday.</p>
+<h2 id="css3-2d-transforms">CSS3 2D Transforms</h2>
 <p>Elements may be translated (moved), rotated, scaled and skewed using CSS transforms.</p>
-<p>Transforms in two dimensions are within the x-y axis of the web-page.</p>
-<p>The syntax is again that of a function:</p>
+<p>Transforms in two dimensions are within the X-Y axis of the web-page.</p>
+<p>The syntax is that of a function:</p>
 <pre class="sourceCode css"><code class="sourceCode css">    transform<span class="dv">:</span> rotate(20deg);</code></pre>
-<p>This will rotate the element 20° clockwise. A negative value will rotate anit-clockwise.</p>
-<p>While you might expect the rotation to be about the 'centre' of the element this may not be what happens in practice. I suspect this is done and then an implicit translation is done to keep the rotated element within its containing object.</p>
+<p>This will rotate the element 20° clockwise. A negative value will rotate anti-clockwise.</p>
+<p>The rotation is done within the X-Y plane of the page and so is the same as the 3D rotation about the Z-axis.</p>
+<p>While you might expect the rotation to be about the 'centre' of the element this may not be what happens in practice. I suspect that the rotation is followed by an implicit translation is done to keep the rotated element within its containing object.</p>
 <p>All the 2D transform methods can be combined into one <code>matrix</code> transform (according to the tutorial - it is not self-evident that rotation is included):</p>
 <pre class="sourceCode css"><code class="sourceCode css">    transform<span class="dv">:</span>  matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())<span class="dv">:</span></code></pre>
 <p>Yes, the order is correct.</p>
 <p>The <code>matrix</code> transform may be thought of as a summary transform for:</p>
 <pre class="ccs"><code>    transform:  scale(X,Y)      # factor to scale by
     transform:  skew(X,Y)       # degrees to skew by
-    transform:  translate(X,Y)  # pixels to moved the element by</code></pre>
-<p>These are themselves summary transforms for <code>scaleX()</code>, ... <code>translateY()</code>.</p>
+    transform:  translate(X,Y)  # pixels to move the element by</code></pre>
+<p>These are themselves summary transforms for <code>scaleX()</code> ... <code>translateY()</code>.</p>
 <p>I'm not entirely clear about the units and the effect may not always be what you expect.</p>
-<p>There is a second property <code>transform-origin</code> which is not covered by the tutorial at all.</p>
+<p>There is a second property <code>transform-origin</code> which requires the first. It is not covered by the tutorial at all.</p>
+<h2 id="css3-3d-transforms">CSS3 3D Transforms</h2>
+<p>Only the 3D rotations are described and then only briefly.</p>
+<p>While the 2D transforms all operate in the X-Y plane that is the web page, the 3D transforms operate in X-Y-Z space. This is perhaps easiest to visualise with rotation.</p>
+<p>The 3D <code>rotateZ()</code> is the same as the 2D <code>rotate()</code>. The image stays flat on the web-page. Rotation by 180° leaves text upside down and back-to-front.</p>
+<p>In contrast, think of <code>rotateY()</code> as swivelling the monitor around on its base only it is the element contents, not the entire web page, that rotates. A rotation of 90° makes the element disappear as you are looking at it end on. A rotation of 180° leaves text back-to-front.</p>
+<p>Think of <code>rotateX()</code> as turning the monitor upside down. A rotation of 90° makes the element disappear as you are looking at it end on. A rotation of 180° leaves text upside down.</p>
+<p>To the list of simple 2D transforms are added <code>translateZ()</code> and <code>scaleZ()</code> (but not skewZ()) and to the list of summary transforms is added <code>translate3d()</code>, <code>scale3d()</code>, <code>rotate3d()</code> and <code>matrix3d()</code>.</p>
+<p>It must be remarked that <code>rotate3d()</code> appears to have four parameters of which only one is an angle and that <code>matrix3d</code> takes 16 parameters representing not a 3x3 transform but a 4x4 transform.</p>
+<p>One more method is listed: <code>perspective()</code> and three more new properties: <code>transform-style</code>, <code>perspective</code>, <code>perspective-origin</code> and <code>backface-visibility</code>.</p>
+<p>Clearly there is much experimentation to be done.</p>
 </body>
 </html>
 
