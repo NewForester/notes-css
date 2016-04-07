@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css3-transitions">CSS3 Transitions</h2>
+<p>CSS3 transitions allow the rendering of property values to change smoothly.</p>
+<p>The examples in the tutorial are all change the width of an element or apply a transform. I do not know if the property apply to all attributes or just those that can be animated. I am not sure what I would be looking for if I set a transition time on changing text style from normal to italic.</p>
+<p>The example all use mouse hover to trigger the transition (and back again). I guess you can use scripts too.</p>
+<p>There are four properties and one summary property:</p>
+<ul>
+<li><code>transition-property</code> - the name the CSS property whose value is to be transitioned</li>
+<li><code>transition-duration</code> - how long the effect lasts (seconds)</li>
+<li><code>transition-timing-function</code> - the speed curve of the transition effect</li>
+<li><code>transition-delay</code> - how long before the transition starts (seconds)</li>
+</ul>
+<p>The summary property has the form:</p>
+<pre class="css3"><code>    transition: property duration timing-function delay</code></pre>
+<p>for a single property and</p>
+<pre class="css3"><code>    transition: property duration timing-function delay, property2 duration2 timing-function2 delay2, ...</code></pre>
+<p>for more than one.</p>
+<p>A value must be given for the duration. Nothing will happen otherwise as the duration defaults to 0.</p>
+<p>The <code>transition-timing-function</code> is one of:</p>
+<ul>
+<li>ease - default - as <code>ease-in-out</code> but with more aggressive acceleration;</li>
+<li>linear - the transition proceeds with a constant speed;</li>
+<li>ease-in - the transition starts slowly and speeds up;</li>
+<li>ease-out - the transition starts fast and slows down towards the end;</li>
+<li>ease-in-out - the transition is slower at the start and end than in between;</li>
+<li>cubic-bezier(n,n,n,n) - define your own values for a cubic Bezier function;</li>
+</ul>
+<p>I guess the <code>cubic-bezier()</code> is for experts.</p>
+</body>
+</html>
+
+
