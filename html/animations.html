@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css3-animations">CSS3 Animations</h2>
+<p>CSS3 animations allow the animation of many elements without using scripts. They resemble CSS transitions but allow more sophisticated effects.</p>
+<p>The examples in the tutorial involve changing the background colour of a box while moving it around the page.</p>
+<p>There is no trigger: the animation occurs on page load. However, I guess they could be triggered by events or scripts.</p>
+<p>There are six properties with one summary property:</p>
+<ul>
+<li><code>animation-name</code> - the name a of @keyframes code animation block</li>
+<li><code>animation-duration</code> - how long the effect lasts (seconds)</li>
+<li><code>animation-timing-function</code> - the speed curve of the animation effect</li>
+<li><code>animation-delay</code> - how long before the animation starts (seconds)</li>
+<li><code>animation-iteration-count</code> - how may times to repeat the animation</li>
+<li><code>animation-direction</code> - play in reverse or alternate through repetitions</li>
+</ul>
+<p>The summary property has the form:</p>
+<pre class="css3"><code>    animation: name duration timing-function delay iteration-count direction</code></pre>
+<p>There are two further properties not covered by the tutorial.</p>
+<ul>
+<li><code>animation-fill-mode</code> - the element style when the animation is not running</li>
+<li><code>animation-play-state</code> - whether the animation if running or not</li>
+</ul>
+<p>A value must be given for the duration. Nothing will happen otherwise as the duration defaults to 0.</p>
+<p>The <code>animation-timing-function</code> is one of:</p>
+<ul>
+<li>ease - default - as <code>ease-in-out</code> but with more aggressive acceleration;</li>
+<li>linear - the animation proceeds with a constant speed;</li>
+<li>ease-in - the animation starts slowly and speeds up;</li>
+<li>ease-out - the animation starts fast and slows down towards the end;</li>
+<li>ease-in-out - the animation is slower at the start and end than in between;</li>
+<li>cubic-bezier(n,n,n,n) - define your own values for a cubic Bezier function;</li>
+</ul>
+<p>I guess the <code>cubic-bezier()</code> is for experts.</p>
+<p>The iteration determines how many times the animation should be run. The examples use integers or the value <code>infinite</code>.</p>
+<p>The direction may take the value <code>normal</code>, <code>reverse</code>, <code>alternate</code> and <code>alternate-reverse</code> as well as <code>initial</code> and <code>inherit</code>.</p>
+<hr />
+
+<p>An important difference between transitions and animations is that a transition refer to one or more properties while an animation refers to a bit of code called a keyframe that may refer to several properties.</p>
+<p>A simple example that specifies just initial and final states is:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    @keyframes name <span class="kw">{</span>
+        <span class="er">from</span> <span class="er">{</span><span class="kw">background-color</span><span class="er">;</span> <span class="er">red;</span> <span class="er">}</span>
+        <span class="er">to</span>   <span class="er">{background-color;</span> <span class="er">yellow;</span> <span class="er">}</span>
+    <span class="er">}</span></code></pre>
+<p>A more complex example specifies a series of states using percentages of the animation's duration:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    @keyframe name <span class="kw">{</span>
+          <span class="er">0%</span>    <span class="er">{</span> <span class="kw">background-color:</span> <span class="dt">red</span><span class="kw">;</span>    <span class="kw">left:</span>  <span class="dt">0px</span><span class="kw">;</span> <span class="kw">top:</span>  <span class="dt">0px</span><span class="kw">;</span> <span class="kw">}</span>
+         25%    <span class="kw">{</span> <span class="kw">background-color:</span> <span class="dt">yellow</span><span class="kw">;</span> <span class="kw">left:</span> <span class="dt">50px</span><span class="kw">;</span> <span class="kw">top:</span>  <span class="dt">0px</span><span class="kw">;</span> <span class="kw">}</span>
+         50%    <span class="kw">{</span> <span class="kw">background-color:</span> <span class="dt">blue</span><span class="kw">;</span>   <span class="kw">left:</span> <span class="dt">50px</span><span class="kw">;</span> <span class="kw">top:</span> <span class="dt">50px</span><span class="kw">;</span> <span class="kw">}</span>
+         75%    <span class="kw">{</span> <span class="kw">background-color:</span> <span class="dt">green</span><span class="kw">;</span>  <span class="kw">left:</span>  <span class="dt">0px</span><span class="kw">;</span> <span class="kw">top:</span> <span class="dt">50px</span><span class="kw">;</span> <span class="kw">}</span>
+        100%    <span class="kw">{</span> <span class="kw">background-color:</span> <span class="dt">red</span><span class="kw">;</span>    <span class="kw">left:</span>  <span class="dt">0px</span><span class="kw">;</span> <span class="kw">top:</span>  <span class="dt">0px</span><span class="kw">;</span> <span class="kw">}</span>
+    }</code></pre>
+</body>
+</html>
+
+
