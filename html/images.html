@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css3-images">CSS3 Images</h2>
+<p>There are number of ways images may be styled and responsive effects created with CSS3. Not all require a script.</p>
+<hr /><!-- Rounded Images and Thumbnails -->
+
+<p>Use the <code>border-radius</code> property to round the corner of images:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    img <span class="kw">{</span>
+        <span class="kw">border-radius:</span> <span class="dt">8px</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    img <span class="kw">{</span>
+        <span class="kw">border-radius:</span> <span class="dt">50%</span><span class="kw">;</span>
+    <span class="er">]</span></code></pre>
+<p>A border radius of 50% will turn a rectangular image into elliptical image.</p>
+<p>A thumbnail effect can be achieved using a border and a little padding:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    img <span class="kw">{</span>
+        <span class="kw">border:</span> <span class="dt">1px</span> <span class="dt">solid</span> <span class="dt">#ddd</span><span class="kw">;</span>
+        <span class="kw">border-radius:</span> <span class="dt">4px</span><span class="kw">;</span>
+        <span class="kw">padding:</span> <span class="dt">5px</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>The thumbnail can be turned into a link by enclosing it in an <code>&lt;a&gt;</code> element. It is nice to change the appearance subtly when the mouse passes over the image:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    img<span class="dv">:hover</span> <span class="kw">{</span>
+        <span class="kw">box-shadow:</span> <span class="dt">0</span> <span class="dt">0</span> <span class="dt">2px</span> <span class="dt">1px</span> <span class="dt">rgba(0</span>, <span class="dt">140</span>, <span class="dt">186</span>, <span class="dt">0.5)</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<hr /><!-- Responsive Images -->
+
+<p>Responsive images will automatically adjust to fit different sized screens.</p>
+<p>This will scale an image down but not up:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    img <span class="kw">{</span>
+        <span class="kw">height:</span> <span class="dt">auto</span><span class="kw">;</span>
+        <span class="kw">max-width:</span> <span class="dt">100%</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>To centre an image, make it display as a block element and set the margin to auto:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    img <span class="kw">{</span>
+        <span class="kw">display:</span> <span class="dt">block</span><span class="kw">;</span>
+        <span class="kw">margin:</span> <span class="dt">auto</span><span class="kw">;</span>
+        <span class="kw">width:</span> <span class="dt">50%</span>
+    <span class="kw">}</span></code></pre>
+<hr /><!-- Polaroid Images and Cards -->
+
+<p>You can achieve a Polaroid image effect by using a fading shadow around a container around an image and its description:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    &lt;style&gt;
+        div<span class="fl">.polaroid</span> <span class="kw">{</span>
+            <span class="kw">width:</span> <span class="dt">80%</span><span class="kw">;</span>
+            <span class="kw">background-color:</span> <span class="dt">white</span><span class="kw">;</span>
+            <span class="kw">box-shadow:</span> <span class="dt">0</span> <span class="dt">4px</span> <span class="dt">8px</span> <span class="dt">0</span> <span class="dt">rgba(0</span>, <span class="dt">0</span>, <span class="dt">0</span>, <span class="dt">0.2)</span>, <span class="dt">0</span> <span class="dt">6px</span> <span class="dt">20px</span> <span class="dt">0</span> <span class="dt">rgba(0</span>, <span class="dt">0</span>, <span class="dt">0</span>, <span class="dt">0.19)</span><span class="kw">;</span>
+            <span class="kw">margin-bottom:</span> <span class="dt">25px</span><span class="kw">;</span>
+        <span class="kw">}</span>
+
+        div<span class="fl">.description</span> <span class="kw">{</span>
+           <span class="kw">text-align:</span> <span class="dt">center</span><span class="kw">;</span>
+           <span class="kw">padding:</span> <span class="dt">10px</span> <span class="dt">20px</span><span class="kw">;</span>
+        <span class="kw">}</span>
+    &lt;/style&gt;
+
+    &lt;div class=<span class="st">&quot;polaroid&quot;</span>&gt;
+        &lt;img src=<span class="st">&quot;bla.jpg&quot;</span> alt=<span class="st">&quot;bla bla&quot;</span> style=<span class="st">&quot;width:100%&quot;</span>&gt;
+        &lt;div class=<span class="st">&quot;description&quot;</span>&gt;
+            &lt;p&gt;bla bla bla&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+<hr /><!-- Transparent Images and Image Text -->
+
+<p>An image can be made to appear transparent:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    img <span class="kw">{</span>
+        <span class="kw">opacity:</span> <span class="dt">0.5</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>Text that is not semi-transparent can be superposed using a sibling element.</p>
+<pre class="sourceCode css"><code class="sourceCode css">    &lt;style&gt;
+        <span class="fl">.container</span> <span class="kw">{</span>
+            <span class="kw">position:</span> <span class="dt">relative</span><span class="kw">;</span>
+        <span class="kw">}</span>
+
+        <span class="fl">.center</span> <span class="kw">{</span>
+            <span class="kw">position:</span> <span class="dt">absolute</span><span class="kw">;</span>
+            <span class="kw">top:</span> <span class="dt">50%</span><span class="kw">;</span>
+            <span class="kw">left:</span> <span class="dt">50%</span><span class="kw">;</span>
+            <span class="kw">transform:</span> translate(<span class="dt">-50%</span>, <span class="dt">-50%</span>)<span class="kw">;</span>
+            <span class="kw">font-size:</span> <span class="dt">18px</span><span class="kw">;</span>
+        <span class="kw">}</span>
+
+        img <span class="kw">{</span>
+            <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span>
+            <span class="kw">height:</span> <span class="dt">auto</span><span class="kw">;</span>
+            <span class="kw">opacity:</span> <span class="dt">0.3</span><span class="kw">;</span>
+        <span class="kw">}</span>
+    &lt;/style&gt;
+
+    &lt;div class=<span class="st">&quot;container&quot;</span>&gt;
+        &lt;img src=<span class="st">&quot;bla.jpg&quot;</span> alt=<span class="st">&quot;bla bla&quot;</span> width=<span class="st">&quot;1000&quot;</span> height=<span class="st">&quot;300&quot;</span>&gt;
+        &lt;div class=<span class="st">&quot;center&quot;</span>&gt;Centered&lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+<p>Note: for the text, the top and left properties have the values 50%. That puts the top-left corner of the class' element in the middle of the image, not the text that it contains. The transform property then moves the text, regardless of its length, so that the text appears in the middle of the image.</p>
+<hr /><!-- Image Filters -->
+
+<p>The CSS <code>filter</code> property may be used to add visual effects to an element. Visual effects are things like blur and saturation.</p>
+<p>This is a big enough topic to have its own page: <a href="https://www.w3schools.com/cssref/css3_pr_filter.asp">CCS Filter Reference</a>. Note this is a reference, not a tutorial section.</p>
+<hr /><!-- Image Hover Overlay -->
+
+<p>When combined with the <code>hover</code> selector and the <code>transition</code> property an overlay effect can be created:</p>
+<style>
+    .container {
+        position: relative;
+        width: 20%;
+    }
+
+    .image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 100%;
+        right: 0;
+        background-color: #008CBA;
+        overflow: hidden;
+        width: 0;
+        height: 100%;
+        transition: .5s ease;
+    }
+
+    .container:hover .overlay {
+        width: 100%;
+        left: 0;
+    }
+
+    .text {
+        white-space: nowrap;
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        overflow: hidden;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<div class="container">
+    
+<img src="../images/img_avatar.png" alt="Avatar" class="image">
+<div class="overlay">
+        <div class="text">
+Hello World
+</div>
+    </div>
+</div>
+
+<hr /><!-- Responsive Image Gallery -->
+
+<p>When CSS is used to create image galleries, media queries may be used to arrange the images differently on different sized screens.</p>
+<p>The essentials are:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.responsive</span> <span class="kw">{</span>
+        <span class="kw">padding:</span> <span class="dt">0</span> <span class="dt">6px</span><span class="kw">;</span>
+        <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+        <span class="kw">width:</span> <span class="dt">24.99999%</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="dv">@media</span> <span class="er">only</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:</span> <span class="er">700px){</span>
+        <span class="er">.responsive</span> <span class="dv">{</span>
+            width<span class="dv">: 49</span><span class="fl">.99999</span>%;
+            margin<span class="dv">: 6px 0;</span>
+        <span class="dv">}</span>
+    }
+
+    <span class="dv">@media</span> <span class="er">only</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:</span> <span class="er">500px){</span>
+        <span class="er">.responsive</span> <span class="dv">{</span>
+            width<span class="dv">: 100%;</span>
+        <span class="dv">}</span>
+}</code></pre>
+<p>Here <code>responsive</code> is class with different properties for different sized screens. For progressively smaller screen sizes, the value of the <code>width</code> property ensures that 4, 2 and then 1 image appear side-by-size.</p>
+<p>There is more in the <a href="https://www.w3schools.com/css/css_rwd_intro.asp">CSS RWD Tutorial</a>.</p>
+<hr /><!-- Model Image -->
+
+<p>The final part of the tutorial combines CSS and JavaScript to display a modal window. The ordinary image is a tad small, the modal window shows it full size.</p>
+<p>I need to learn some JavaScript before trying to understand what is really going on.</p>
+</body>
+</html>
+
+
