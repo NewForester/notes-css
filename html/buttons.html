@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css3-buttons">CSS3 Buttons</h2>
+<p>Buttons are essential to web pages. They support hyper-link navigation and data entry on forms.</p>
+<pre class="sourceCode css"><code class="sourceCode css">    &lt;!-- Hyperlink --&gt;
+    &lt;a href=<span class="fl">#</span> class=<span class="st">&quot;button&quot;</span>&gt;Link Button&lt;/a&gt;
+
+    &lt;!-- Button Elements --&gt;
+    &lt;button class=<span class="st">&quot;button&quot;</span>&gt;Button&lt;/button&gt;
+
+    &lt;!-- Input Elements --&gt;
+    &lt;input type=<span class="st">&quot;button&quot;</span> class=<span class="st">&quot;button&quot;</span> value=<span class="st">&quot;Input Button&quot;</span>&gt;</code></pre>
+<p>How they appear and behave is largely down to how CSS is used to style the buttons. This section does not introduce new properties. It illustrates how properties may be used with buttons.</p>
+<hr /><!-- Basic Button Styling -->
+
+<p>The basic button is ugly and a give away. To override it, consider using some or all of these properties:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.button</span> <span class="kw">{</span>
+        <span class="kw">background-color:</span>       <span class="dt">blue</span><span class="kw">;</span>
+        <span class="kw">border:</span>                 <span class="dt">none</span><span class="kw">;</span>
+        <span class="kw">color:</span>                  <span class="dt">white</span><span class="kw">;</span>
+        <span class="kw">padding:</span>                <span class="dt">15px</span> <span class="dt">32px</span><span class="kw">;</span>
+        <span class="kw">text-align:</span>             <span class="dt">center</span><span class="kw">;</span>
+        <span class="kw">text-decoration:</span>        <span class="dt">none</span><span class="kw">;</span>
+        <span class="kw">display:</span>                <span class="dt">inline-block</span><span class="kw">;</span>
+        <span class="kw">font-size:</span>              <span class="dt">16px</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>The change the buttons colour use the <code>background-color</code> property.</p>
+<p>To change the size of the text within the button, use the <code>font-size</code> property.</p>
+<p>To change the overall size of the button, use the <code>padding</code> property.</p>
+<p>To round the corners of the button, use the <code>border-radius</code> property.</p>
+<p>An alternative to the coloured button, is a white button with a coloured border.</p>
+<hr /><!-- Changing Button Appearance on Mouse Over -->
+
+<p>It is common to highlight a button as the mouse moves over it. There are many ways to do this.</p>
+<p>This example swaps between a coloured button with no border to a white button with a coloured border:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.button</span> <span class="kw">{</span>
+        <span class="kw">background-color:</span> <span class="dt">green</span><span class="kw">;</span>
+        <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span>
+        <span class="kw">border:</span> <span class="dt">none</span><span class="kw">;</span>
+        <span class="kw">transition-duration:</span> <span class="dt">0.4s</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="fl">.button</span><span class="dv">:hover</span> <span class="kw">{</span>
+        <span class="kw">background-color:</span> <span class="dt">white</span><span class="kw">;</span>
+        <span class="kw">color:</span> <span class="dt">black</span><span class="kw">;</span>
+        <span class="kw">border:</span> <span class="dt">2px</span> <span class="dt">solid</span> <span class="dt">green</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>A fading shadow is another form of highlighting:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.button1</span> <span class="kw">{</span>
+        <span class="kw">box-shadow:</span> <span class="dt">0</span> <span class="dt">8px</span> <span class="dt">16px</span> <span class="dt">0</span> <span class="dt">rgba(0</span>,<span class="dt">0</span>,<span class="dt">0</span>,<span class="dt">0.2)</span>, <span class="dt">0</span> <span class="dt">6px</span> <span class="dt">20px</span> <span class="dt">0</span> <span class="dt">rgba(0</span>,<span class="dt">0</span>,<span class="dt">0</span>,<span class="dt">0.19)</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="fl">.button2</span><span class="dv">:hover</span> <span class="kw">{</span>
+        <span class="kw">box-shadow:</span> <span class="dt">0</span> <span class="dt">12px</span> <span class="dt">16px</span> <span class="dt">0</span> <span class="dt">rgba(0</span>,<span class="dt">0</span>,<span class="dt">0</span>,<span class="dt">0.24)</span>, <span class="dt">0</span> <span class="dt">17px</span> <span class="dt">50px</span> <span class="dt">0</span> <span class="dt">rgba(0</span>,<span class="dt">0</span>,<span class="dt">0</span>,<span class="dt">0.19)</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>When a mouse crosses a button the cursor changes to a hand (the <code>cursor: pointer</code>). A button that has been disabled might be highlighted thus:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.disabled</span> <span class="kw">{</span>
+        <span class="kw">opacity:</span> <span class="dt">0.6</span><span class="kw">;</span>
+        <span class="kw">cursor:</span> not-allowed<span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>By default, the width of a button is determined by the width of the text content (plus padding etc.). The <code>width</code> property may be used to make the button wider. Use a percentage to specify a fraction of the width of the containing element (often the page/screen).</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.button1</span> <span class="kw">{width:</span> <span class="dt">250px</span><span class="kw">;}</span>
+    <span class="fl">.button2</span> <span class="kw">{width:</span> <span class="dt">50%</span><span class="kw">;}</span>
+    <span class="fl">.button3</span> <span class="kw">{width:</span> <span class="dt">100%</span><span class="kw">;}</span></code></pre>
+<hr /><!-- Button Groups -->
+
+<p>To place several buttons side-by-side, remove the margin and let them float to the left.</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.button</span> <span class="kw">{</span>
+        <span class="kw">margin:</span> <span class="dt">none</span><span class="kw">;</span>
+        <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>Take care to turn the float off for the element that follows:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    &lt;p style=<span class="st">&quot;clear:both&quot;</span>&gt;&lt;br&gt;Thus<span class="fl">.</span>&lt;/p&gt;</code></pre>
+<p>The border property can be used to create a bordered button group:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.button</span> <span class="kw">{</span>
+        <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+        <span class="kw">border:</span> <span class="dt">1px</span> <span class="dt">solid</span> <span class="dt">green</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="fl">.btn-group</span> <span class="fl">.button</span><span class="dv">:not</span>(<span class="dv">:last-child</span>) <span class="kw">{</span>
+        <span class="kw">border-right:</span> <span class="dt">none</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>Suppressing the right-hand border prevents a double border appearing between buttons but it does not scale down so well.</p>
+<p>To group buttons vertically</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.button</span> <span class="kw">{</span>
+        <span class="kw">display:</span> <span class="dt">block</span><span class="kw">;</span>
+        <span class="kw">border:</span> <span class="dt">1px</span> <span class="dt">solid</span> <span class="dt">green</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="fl">.btn-group</span> <span class="fl">.button</span><span class="dv">:not</span>(<span class="dv">:last-child</span>) <span class="kw">{</span>
+        <span class="kw">border-bottom:</span> <span class="dt">none</span><span class="kw">;</span>
+    <span class="kw">}</span>
+}</code></pre>
+<hr /><!-- Animated Buttons -->
+
+<p>CSS animations can be used to good effect.</p>
+<p>This example add &quot;»&quot; on mouse over:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.button</span> <span class="kw">{</span> <span class="er">...</span> <span class="kw">}</span>
+
+    <span class="fl">.button</span> span <span class="kw">{</span>
+        <span class="kw">position:</span> <span class="dt">relative</span><span class="kw">;</span>
+        <span class="kw">transition:</span> <span class="dt">0.5s</span><span class="kw">;</span>
+    <span class="kw">}</span>
+    <span class="fl">.button</span> span<span class="dv">:after</span> <span class="kw">{</span>
+        <span class="kw">content:</span> <span class="st">&#39;\00bb&#39;</span><span class="kw">;</span>
+        <span class="kw">opacity:</span> <span class="dt">0</span><span class="kw">;</span>
+        <span class="kw">position:</span> <span class="dt">absolute</span><span class="kw">;</span>
+        <span class="kw">transition:</span> <span class="dt">0.5s</span><span class="kw">;</span>
+    <span class="kw">}</span>
+    <span class="fl">.button</span><span class="dv">:hover</span> span <span class="kw">{</span>
+        <span class="kw">padding-right:</span> <span class="dt">25px</span><span class="kw">;</span>
+    <span class="kw">}</span>
+    <span class="fl">.button</span><span class="dv">:hover</span> span<span class="dv">:after</span> <span class="kw">{</span>
+        <span class="kw">opacity:</span> <span class="dt">1</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>This example gives a &quot;pressed&quot; effect on click:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.button</span> <span class="kw">{</span>
+        <span class="kw">background-color:</span> <span class="dt">green</span><span class="kw">;</span>
+        <span class="kw">box-shadow:</span> <span class="dt">0</span> <span class="dt">9px</span> <span class="dt">#999</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="fl">.button</span><span class="dv">:hover</span> <span class="kw">{</span>
+        <span class="kw">background-color:</span> darkgreen<span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="fl">.button</span><span class="dv">:active</span> <span class="kw">{</span>
+        <span class="kw">background-color:</span> darkgreen<span class="kw">;</span>
+        <span class="kw">box-shadow:</span> <span class="dt">0</span> <span class="dt">5px</span> <span class="dt">#666</span><span class="kw">;</span>
+        <span class="kw">transform:</span> translateY(<span class="dt">4px</span>)<span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>This example has a &quot;ripple&quot; effect on click:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.button</span> <span class="kw">{</span>
+        <span class="kw">position:</span> <span class="dt">relative</span><span class="kw">;</span>
+        <span class="kw">background-color:</span> <span class="dt">green</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="fl">.button</span><span class="dv">:after</span> <span class="kw">{</span>
+        <span class="kw">content:</span> <span class="st">&quot;&quot;</span><span class="kw">;</span>
+        <span class="kw">background:</span> <span class="dt">#f1f1f1</span><span class="kw">;</span>
+        <span class="kw">display:</span> <span class="dt">block</span><span class="kw">;</span>
+        <span class="kw">position:</span> <span class="dt">absolute</span><span class="kw">;</span>
+        <span class="kw">padding-top:</span> <span class="dt">300%</span><span class="kw">;</span>
+        <span class="kw">padding-left:</span> <span class="dt">350%</span><span class="kw">;</span>
+        <span class="kw">margin-left:</span> <span class="dt">-20px</span> <span class="kw">!important;</span>
+        <span class="kw">margin-top:</span> <span class="dt">-120%</span><span class="kw">;</span>
+        <span class="kw">opacity:</span> <span class="dt">0</span><span class="kw">;</span>
+        <span class="kw">transition:</span> all <span class="dt">0.8s</span>
+    <span class="kw">}</span>
+
+    <span class="fl">.button</span><span class="dv">:active:after</span> <span class="kw">{</span>
+        <span class="kw">padding:</span> <span class="dt">0</span><span class="kw">;</span>
+        <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span>
+        <span class="kw">opacity:</span> <span class="dt">1</span><span class="kw">;</span>
+        <span class="kw">transition:</span> <span class="dt">0s</span>
+    <span class="kw">}</span></code></pre>
+</body>
+</html>
+
+
