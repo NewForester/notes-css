@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="css3-pagination">CSS3 Pagination</h2>
+<p>This is not about using CSS to turn a long page into several. It is a about having a row of buttons to navigate between the pages of a web site.</p>
+<p>It builds on the previous topic (see <a href="buttons.html">Buttons</a>) and does not introduce any new properties.</p>
+<p>The HTML of the examples is:</p>
+<pre class="sourceCode html"><code class="sourceCode html">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;center&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;pagination&quot;</span><span class="kw">&gt;</span>
+            <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span><span class="dv">&amp;laquo;</span><span class="kw">&lt;/a&gt;</span>
+            <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>1<span class="kw">&lt;/a&gt;</span>
+            <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="ot"> class=</span><span class="st">&quot;active&quot;</span><span class="kw">&gt;</span>2<span class="kw">&lt;/a&gt;</span>
+            <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>3<span class="kw">&lt;/a&gt;</span>
+            <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>4<span class="kw">&lt;/a&gt;</span>
+            <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>5<span class="kw">&lt;/a&gt;</span>
+            <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>6<span class="kw">&lt;/a&gt;</span>
+            <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span><span class="dv">&amp;raquo;</span><span class="kw">&lt;/a&gt;</span>
+        <span class="kw">&lt;/div&gt;</span>
+    <span class="kw">&lt;/div&gt;</span></code></pre>
+<p>Most of CSS is about the definition of the class pagination:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.pagination</span> <span class="kw">{</span>
+        <span class="kw">display:</span> <span class="dt">inline-block</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="fl">.pagination</span> a <span class="kw">{</span>
+        <span class="kw">color:</span> <span class="dt">black</span><span class="kw">;</span>
+        <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+        <span class="kw">padding:</span> <span class="dt">8px</span> <span class="dt">16px</span><span class="kw">;</span>
+        <span class="kw">text-decoration:</span> <span class="dt">none</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>To highlight the button for the current (active) page add something along the lines:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.pagination</span> a<span class="fl">.active</span> <span class="kw">{</span>
+        <span class="kw">background-color:</span> <span class="dt">blue</span><span class="kw">;</span>
+        <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>To highlight other buttons on mouse over add something along the lines:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.pagination</span> a<span class="dv">:hover:not</span>(<span class="fl">.active</span>) <span class="kw">{</span>
+        <span class="kw">background-color:</span> grey<span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>To make the user want a bigger, faster, browser:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.pagination</span> a <span class="kw">{</span>
+        <span class="kw">transition:</span> background-color <span class="dt">0.5s</span>
+    <span class="kw">}</span></code></pre>
+<p>You can add borders between the buttons (note no worries about double borders this time) and round the two at the ends:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.pagination</span> a <span class="kw">{</span>
+        <span class="kw">border:</span> <span class="dt">1px</span> <span class="dt">solid</span> grey<span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="fl">.pagination</span> a<span class="dv">:first-child</span> <span class="kw">{</span>
+        <span class="kw">border-top-left-radius:</span> <span class="dt">5px</span><span class="kw">;</span>
+        <span class="kw">border-bottom-left-radius:</span> <span class="dt">5px</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    <span class="fl">.pagination</span> a<span class="dv">:last-child</span> <span class="kw">{</span>
+        <span class="kw">border-top-right-radius:</span> <span class="dt">5px</span><span class="kw">;</span>
+        <span class="kw">border-bottom-right-radius:</span> <span class="dt">5px</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>Use the margin property to put some space between the buttons:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.pagination</span> a <span class="kw">{</span>
+        <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">4px</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>To centre the pagination, centre the container:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">.center</span> <span class="kw">{</span>
+        <span class="kw">text-align:</span> <span class="dt">center</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<hr />
+
+<p>An alternative is the 'breadcrumbs' approach that implies a hierarchy:</p>
+<pre class="sourceCode css"><code class="sourceCode css">    ul<span class="fl">.breadcrumb</span> <span class="kw">{</span>
+        <span class="kw">padding:</span> <span class="dt">8px</span> <span class="dt">16px</span><span class="kw">;</span>
+        <span class="kw">list-style:</span> <span class="dt">none</span><span class="kw">;</span>
+        <span class="kw">background-color:</span> grey
+    <span class="kw">}</span>
+
+    ul<span class="fl">.breadcrumb</span> li <span class="kw">{</span>
+        <span class="kw">display:</span> <span class="dt">inline</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    ul<span class="fl">.breadcrumb</span> li+li<span class="dv">:before</span> <span class="kw">{</span>
+        <span class="kw">padding:</span> <span class="dt">8px</span><span class="kw">;</span>
+        <span class="kw">color:</span> <span class="dt">black</span><span class="kw">;</span>
+        <span class="kw">content:</span> <span class="st">&quot;/\00a0&quot;</span><span class="kw">;</span>
+    <span class="kw">}</span>
+
+    ul<span class="fl">.breadcrumb</span> li a <span class="kw">{</span>
+        <span class="kw">color:</span> <span class="dt">blue</span><span class="kw">;</span>
+    <span class="kw">}</span></code></pre>
+<p>which appears something like:</p>
+<style>
+    ul.breadcrumb {
+        padding: 8px 16px;
+        list-style: none;
+        background-color: #eee;
+    }
+    ul.breadcrumb li {display: inline;}
+    ul.breadcrumb li+li:before {
+        padding: 8px;
+        color: black;
+        content: "/\00a0";
+    }
+    ul.breadcrumb li a {color: blue;}
+</style>
+
+<ul class="breadcrumb">
+    <li>
+<a href="#">World</a>
+</li>
+    <li>
+<a href="#">Europe</a>
+</li>
+    <li>
+<a href="#">South</a>
+</li>
+    <li>
+Italy
+</li>
+</ul>
+
+</body>
+</html>
+
+
