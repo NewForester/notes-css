@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="../styles/style-sheet.css" />
+<body>
+
+<h1 id="css3">CSS3</h1>
+<h2 id="user-interface">User Interface</h2>
+<p>The tutorial lists the following properties:</p>
+<ul>
+<li><code>box-sizing</code> include the padding and border in an element's total width and height</li>
+<li><code>nav-down</code> destination of the arrow-down navigation key</li>
+<li><code>nav-index</code> the tabbing order for an element</li>
+<li><code>nav-left</code> destination of the arrow-left navigation key</li>
+<li><code>nav-right</code> destination of the arrow-right navigation key</li>
+<li><code>nav-up</code> destination of the arrow-up navigation key</li>
+<li><code>outline-offset</code> space between an outline and the edge or border of an element</li>
+<li><code>resize</code> whether or not an element is resizable by the user</li>
+</ul>
+<p>The <code>nav-*</code> properties are currently not implemented by major browsers and are not covered by the tutorial. I seem to remember from other contexts that navigation order of forms was important. It is therefore curious that HTML and CSS do so well without.</p>
+<p>The <code>resize</code> and <code>outline-offset</code> properties are not supported by IE.</p>
+<hr /><!-- Box Size -->
+
+<p>The (max) height and (max) width properties of an element determine its size but, by default this size is the area reserved for the elements contents and does not include padding, border, margins or outline.</p>
+<p>The <code>box-sizing</code> property allows some redress:</p>
+<ul>
+<li><code>content-box</code> the default, minimum definition</li>
+<li><code>border-box</code> include content, padding, border but not margins</li>
+</ul>
+<hr /><!-- Outline Offset -->
+
+<p>The outline is drawn outside an element's margin, while the border is inside the margin. See <a href="outline.html">Outline Property</a></p>
+<p>The outline offset specifies the offset of the outline relative to the margin. Default is 0.</p>
+<p>Apparently an outline does not take up space and need not be rectangular. The first implies it may be drawn over adjacent elements. The second is not described any further.</p>
+<hr /><!-- Resize Tab -->
+
+
+<p>The resize tab is a little icon that may appear in the bottom right corner of an element that the user may use to resize the element.</p>
+<p>The property takes one of three values that indicate the direction in which the element may be resized:</p>
+<ul>
+<li>horizontal</li>
+<li>vertical</li>
+<li>both</li>
+</ul>
+<p>This property is generally used with <code>overflow: auto</code> and with the <code>border</code> property.</p>
+</body>
+</html>
+
+
